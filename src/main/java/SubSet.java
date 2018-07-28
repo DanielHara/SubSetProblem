@@ -1,12 +1,5 @@
 import net.mintern.primitive.Primitive;
-
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.stream.IntStream;
 
 public class SubSet
@@ -23,8 +16,6 @@ public class SubSet
     // Colocar apenas um T opcional.
     SubSet() {
     }
-
-
 
     //Soma dos elementos do vetor u, que tem 10 posi��es v�lidas, excluindo a posi��o 0 (n�o � usada).
     //Poderia chamar u de POSIÇÕES do vetor v.
@@ -59,7 +50,7 @@ public class SubSet
 
     }
 
-    public int[] RunAlgorithm (ProblemSet problemSet)
+    public float[] RunAlgorithm (ProblemSet problemSet)
     {
         int Modo = problemSet.getMode();
         float media = problemSet.getDesiredAverage();
@@ -76,9 +67,9 @@ public class SubSet
             Arrays.sort(v);
         }
 
-        int [][][] M = new int [n][T][p];
+        int [][][] M = new int [n][T+1][p];
 
-        for (int t = 0; t < T; t++)
+        for (int t = 0; t <= T; t++)
             for (int i = 0; i < p; i++)
                 M[p-1][t][i] = i;
 
@@ -88,7 +79,7 @@ public class SubSet
         int[] r;			//Vetor �timo
 
         for(int i = p; i < n; i++)
-            for (int t = 0; t < T; t++) {
+            for (int t = 0; t <= T; t++) {
                 if (v[i] > t * b)
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                 else
@@ -111,44 +102,18 @@ public class SubSet
                 }
             }
 
-        return M[n-1][T-1];
+        return mapPositionsToValues(M[n-1][T], v);
     }
 
 
+    private float[] mapPositionsToValues(int[] u, float[] v) {
+        float[] mappedValues = new float[u.length];
 
-    /*
-    public void ShowSolution (String filename)
-    {
-
-        float Soma = 0;
-
-        int i, j;
-
-        for (i = 1; i <= p; i++)
-            Soma = Soma + v[M[n][T][i]];
-
-        float media = (float) Soma/p;
-
-        for (j = 1; j <=p; j++)
-            for (i = 0; i < L.size(); i++)
-                if (L.get(i).Compare((float)v[M[n][T][j]]))
-                    L.get(i).Inc();
-
-        try
-        {
-            FileWriter fw = new FileWriter(filename);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            for (i = 0; i < L.size(); i++)
-                bw.write(L.get(i).GetNumber() + " contratos de " + L.get(i).getTaxa() + "\r\n");
-            bw.write("M�dia = " + media);
-            bw.close();
+        for(int i = 0; i < u.length; i++) {
+            mappedValues[i] = v[u[i]];
         }
-        catch (IOException e)
-        {
-            System.out.println("ERRO de I/O:" + e);
-        }
-    }   */
+        return mappedValues;
+    }
 
     //Esta fun��o varre o vetor v, e substitui os n�meros r de v pelo n�mero s
     //, compondo um novo vetor, que � retornado.

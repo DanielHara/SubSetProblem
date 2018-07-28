@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Program {
@@ -69,8 +72,31 @@ public class Program {
 
         SubSet problemSetSolver = new SubSet();
 
-        int[] solution =  problemSetSolver.RunAlgorithm(problemSet);
+        float[] solutionRates =  problemSetSolver.RunAlgorithm(problemSet);
 
-        // Algorithm.ShowSolution("output.txt");
+        ContractList solutionContractList = new ContractList(solutionRates);
+
+        String solutionString = solutionContractList.getDescription();
+
+        System.out.println(solutionString);
+
+        String outputFile = "output.txt";
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+
+        try
+        {
+            fw = new FileWriter(outputFile);
+            bw = new BufferedWriter(fw);
+
+            bw.write(solutionString);
+
+            bw.close();
+            fw.close();
+        }
+        catch (IOException e)
+        {
+            System.out.println("ERRO de I/O:" + e);
+        }
     }
 }

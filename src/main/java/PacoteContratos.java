@@ -6,7 +6,7 @@ public class PacoteContratos {
     PacoteContratos (float taxa)
     {
         this.taxa = taxa;
-        N = 0;
+        N = 1;
     }
 
     public float getTaxa ()
@@ -19,7 +19,7 @@ public class PacoteContratos {
         N++;
     }
 
-    public int GetNumber ()
+    public int getQuantity ()
     {
         return N;
     }
