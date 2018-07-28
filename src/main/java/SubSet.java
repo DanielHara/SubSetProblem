@@ -2,6 +2,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.IntStream;
 
 public class SubSet
 {
@@ -9,6 +13,7 @@ public class SubSet
     float[] v;	//Vetor dos n�meros representando as taxas dos fundos
     int n;      //Tamanho do vetor (excluindo a posi��o 0). n = n�mero de fundos dos quais podemos escolher.
     int p;
+    float media;
 
     int [][][] M; //Matriz de vetores, de dimens�es (n- 10) x T, onde T � o n�mero de floats poss�veis (lembrar que a posi��o 0 � ignorada)
     //M[i][T] � o vetor de 10 elementos representando a melhor solu��o com 10 dos primeiros i elementos
@@ -25,52 +30,6 @@ public class SubSet
     final int MEDIAPARABAIXO = 1;
     final int MELHORMEDIA = 2;
 
-
-    public void OrdenarCrescente (float[] v)
-    {
-        int i;
-        float aux;
-
-        boolean trocou = true;
-        while (trocou)
-        {
-            trocou = false;
-            for (i = 1; i < v.length - 1; i++)
-            {
-                if (v[i] > v[i+1])
-                {
-                    aux = v[i];
-                    v[i] = v[i+1];
-                    v[i+1] = aux;
-                    trocou = true;
-                }
-            }
-        }
-    }
-
-    public void OrdenarDecrescente (float[] v)
-    {
-        int i;
-        float aux;
-
-        boolean trocou = true;
-        while (trocou)
-        {
-            trocou = false;
-            for (i = 1; i < v.length - 1; i++)
-            {
-                if (v[i] < v[i+1])
-                {
-                    aux = v[i];
-                    v[i] = v[i+1];
-                    v[i+1] = aux;
-                    trocou = true;
-                }
-            }
-        }
-    }
-
-
     // SubSet(int _n, float media, int _p, float[] _v, ArrayList<PacoteContratos> _L, int _Modo)
     SubSet(ProblemSet problemSet)
     {
@@ -78,28 +37,27 @@ public class SubSet
         media = problemSet.getDesiredAverage();
         p = problemSet.getNumberToChoose();
         v = problemSet.getRates();
-        n = v.size();
+        n = v.length;
 
         T = 1000;
 
         b = (float) media * p/T;
 
-        v = CopyVectorFloat(_v);
-
-        if (Modo == MEDIAPARACIMA)
-            OrdenarDecrescente(v);
+        if (Modo == MEDIAPARACIMA) {
+            Arrays.sort(v); //TEM QUE INVERTER A ORDEM!
+        }
         else
         {
-            if (Modo == MEDIAPARABAIXO)
-                OrdenarCrescente(v);
+            if (Modo == MEDIAPARABAIXO) {
+                Arrays.sort(v);
+            }
         }
 
-        //v = new float[n + 1]; //CUIDADO: n+1 porque a posi��o 0 � desprezada.
-        M = new int [n+1][T+1][p+1];
+        M = new int [n][T][p];
 
         int i, t;   //Iteradores
-        for (t = 1; t <= T; t++)
-            for (i = 1; i <= p; i++)
+        for (t = 0; t < T; t++)
+            for (i = 0; i < p; i++)
                 M[p][t][i] = i;
     }
 
@@ -110,7 +68,7 @@ public class SubSet
     {
         float Soma = 0;
         int k;
-        for (k = 1; k <= p; k++)
+        for (k = 0; k < p; k++)
             Soma = Soma + v[u[k]];
         return Soma;
     }
@@ -144,25 +102,25 @@ public class SubSet
         int[] u;			//Vetor iterador
         int[] r;			//Vetor �timo
 
-        for(i = p+1; i <= n; i++)
-            for (t = 1; t <= T; t++)
+        for(i = p; i < n; i++)
+            for (t = 0; t < T; t++)
             {
                 if (v[i] > t * b)
-                    M[i][t] = CopyVector(M[i-1][t]);
+                    M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                 else
                 {
                     Dist = Distancia(M[i-1][t], t, Modo);
-                    M[i][t] = CopyVector(M[i-1][t]);
-                    r = CopyVector(M[i-1][t]);
+                    M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
+                    r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
 
-                    for (k = 1; k <= p; k++)
+                    for (k = 0; k < p; k++)
                     {
-                        u = CopyVector(M[i-1][t]);
+                        u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                         u = Replace(u[k], i, u);
                         if (Dist < 0 || (Dist > Distancia(u, t, Modo) && Distancia(u, t, Modo) > 0))
                         {
-                            r = CopyVector(u);
-                            M[i][t] = CopyVector(u);
+                            r = Arrays.copyOf(u, u.length);
+                            M[i][t] = Arrays.copyOf(u, u.length);
                             Dist = Distancia(r, t, Modo);
                         }
                     }
@@ -214,10 +172,10 @@ public class SubSet
     //, compondo um novo vetor, que � retornado.
     public int[] Replace (int r, int s, int[] v)
     {
-        int[] u = new int[p+1];
+        int[] u = new int[p];
 
         int i;
-        for (i = 1; i <= p; i++)
+        for (i = 0; i < p; i++)
         {
             if (v[i] != r)
                 u[i] = v[i];
@@ -229,17 +187,6 @@ public class SubSet
     public float[] CopyVectorFloat (float[] v)
     {
         float[] u = new float [v.length];
-
-        int i;
-        for (i = 0; i < v.length; i++)
-            u[i] = v[i];
-
-        return u;
-    }
-
-    public int[] CopyVector (int[] v)
-    {
-        int[] u = new int [v.length];
 
         int i;
         for (i = 0; i < v.length; i++)

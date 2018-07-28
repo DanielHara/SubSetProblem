@@ -65,10 +65,12 @@ public class Program {
             }
         }
 
-        SubSet Algorithm = new SubSet(N_ContratosPossiveis, (float) MediaDesejada, N_Escolher, v, Valores_Taxas, Modo);
+        ProblemSet problemSet = new ProblemSet(Modo, N_Escolher, MediaDesejada, v);
+
+        SubSet Algorithm = new SubSet(problemSet);
 
 
         Algorithm.RunAlgorithm();
-        Algorithm.ShowSolution("output.txt");
+        // Algorithm.ShowSolution("output.txt");
     }
 }

@@ -10,7 +10,7 @@ public class ProblemSet {
         this.mode = mode;
         this.numberToChoose = numberToChoose;
         this.desiredAverage = desiredAverage;
-        this.rates = Arrays.copyOf(rates);
+        this.rates = Arrays.copyOf(rates, rates.length);
     }
 
     public int getMode() {
@@ -26,6 +26,6 @@ public class ProblemSet {
     }
 
     public float[] getRates() {
-        return Arrays.copyOf(rates);
+        return Arrays.copyOf(this.rates, this.rates.length);
     }
 }
