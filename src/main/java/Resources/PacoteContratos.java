@@ -1,3 +1,5 @@
+package Resources;
+
 public class PacoteContratos {
 
     private float taxa;

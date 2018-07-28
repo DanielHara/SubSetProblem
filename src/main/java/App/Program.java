@@ -1,7 +1,11 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
+package App;
+
+import Algorithm.AlgorithmMode;
+import Algorithm.ProblemSet;
+import Algorithm.SubSet;
+import Resources.ContractList;
+import Resources.InputReader;
+import Resources.OutputWriter;
 
 public class Program {
 
@@ -10,23 +14,19 @@ public class Program {
         String inputFile = "input.txt";
         String outputFile = "output.txt";
 
-        final int MEDIAPARACIMA = 0;
-        final int MEDIAPARABAIXO = 1;
-        final int MELHORMEDIA = 2;
-
         InputReader input = null;
 
         try
         {
-            input = new InputReader("input.txt");
+            input = new InputReader(inputFile);
         }
         catch (Exception e)
         {
-            System.out.println("Erro: " + e);
+            System.out.println("Error: " + e);
+            return;
         }
 
-        String ModeAsString;
-        int Modo = MELHORMEDIA;
+        AlgorithmMode Modo = AlgorithmMode.MELHORMEDIA;
 
         int N_ContratosPossiveis;
         int N_Escolher;
@@ -35,14 +35,14 @@ public class Program {
         int N_ContratosLidos;
         float Taxa_Contrato_Lido;
 
-        ModeAsString = input.NextToken();
+        String ModeAsString = input.NextToken();
 
         if (ModeAsString.toUpperCase().contains("MEDIAPARACIMA"))
-            Modo = MEDIAPARACIMA;
+            Modo = AlgorithmMode.MEDIAPARACIMA;
         else
         {
             if (ModeAsString.toUpperCase().contains("MEDIAPARABAIXO"))
-                Modo = MEDIAPARABAIXO;
+                Modo = AlgorithmMode.MEDIAPARABAIXO;
         }
 
         N_ContratosPossiveis = Integer.parseInt(input.NextToken());

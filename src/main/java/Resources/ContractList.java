@@ -1,8 +1,13 @@
+package Resources;
+
+import Resources.PacoteContratos;
+
 import java.util.ArrayList;
 
 public class ContractList {
     ArrayList<PacoteContratos> contractList;
     final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
+    final String NO_SOLUTION_FOUND = "NO SOLUTION FOUND";
 
     public ContractList() {
         contractList = new ArrayList();
@@ -25,8 +30,11 @@ public class ContractList {
 
     public ContractList(float[] rates) {
         contractList = new ArrayList();
-        for (float rate: rates) {
-            this.addContractUnit(rate);
+
+        if(rates != null) {
+            for (float rate : rates) {
+                this.addContractUnit(rate);
+            }
         }
     }
 
@@ -45,6 +53,10 @@ public class ContractList {
 
     public String getDescription() {
         String description = "";
+
+        if (contractList.size() == 0) {
+            return NO_SOLUTION_FOUND;
+        }
 
         for (PacoteContratos contract: contractList) {
             description =

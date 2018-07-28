@@ -1,19 +1,21 @@
+package Algorithm;
+
 import java.util.Arrays;
 
 public class ProblemSet {
-    private int mode;
+    private AlgorithmMode mode;
     private int numberToChoose;
     private float desiredAverage;
     private float[] rates;
 
-    public ProblemSet(int mode, int numberToChoose, float desiredAverage, float[] rates) {
+    public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {
         this.mode = mode;
         this.numberToChoose = numberToChoose;
         this.desiredAverage = desiredAverage;
         this.rates = Arrays.copyOf(rates, rates.length);
     }
 
-    public int getMode() {
+    public AlgorithmMode getMode() {
         return this.mode;
     }
 
