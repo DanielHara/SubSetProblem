@@ -13,5 +13,12 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>net.mintern</groupId>
+            <artifactId>primitive</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+    </dependencies>
 
 </project>

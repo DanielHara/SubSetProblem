@@ -1,3 +1,5 @@
+import net.mintern.primitive.Primitive;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,15 +22,16 @@ public class SubSet
     //cuja soma melhor aproxima T.
     //b � o PASSO
     float b; 		  //T*b � o n�mero a ser melhor aproximado pela soma de v[k], com k pertencente ao vetor M[i][T]
-    int T;        //T tamanho m�ximo
-
-    ArrayList<PacoteContratos> L;
 
     int Modo;
+
+    final int T = 1000;
 
     final int MEDIAPARACIMA = 0;
     final int MEDIAPARABAIXO = 1;
     final int MELHORMEDIA = 2;
+
+    final float INFINITY = -1;
 
     // SubSet(int _n, float media, int _p, float[] _v, ArrayList<PacoteContratos> _L, int _Modo)
     SubSet(ProblemSet problemSet)
@@ -39,25 +42,19 @@ public class SubSet
         v = problemSet.getRates();
         n = v.length;
 
-        T = 1000;
-
         b = (float) media * p/T;
 
         if (Modo == MEDIAPARACIMA) {
-            Arrays.sort(v); //TEM QUE INVERTER A ORDEM!
+            Primitive.sort(v, (d1, d2)->Double.compare(d2,d1));
         }
-        else
-        {
-            if (Modo == MEDIAPARABAIXO) {
-                Arrays.sort(v);
-            }
+        else if (Modo == MEDIAPARABAIXO) {
+            Arrays.sort(v);
         }
 
         M = new int [n][T][p];
 
-        int i, t;   //Iteradores
-        for (t = 0; t < T; t++)
-            for (i = 0; i < p; i++)
+        for (int t = 0; t < T; t++)
+            for (int i = 0; i < p; i++)
                 M[p][t][i] = i;
     }
 
@@ -82,13 +79,13 @@ public class SubSet
             if (Modo == MEDIAPARACIMA)
             {
                 if ((float)(Soma(u) - (float)t*b) < -0.001)
-                    return -1;
+                    return INFINITY;
                 else return (float)Math.abs((float)(Soma(u) - (float)t*b));
             }
             else
             {
                 if ((float)(Soma(u) - (float)t*b) > 0.001)
-                    return -1;
+                    return INFINITY;
                 else return (float)Math.abs((float)(Soma(u) - (float)t*b));
             }
         }
@@ -97,13 +94,12 @@ public class SubSet
 
     public void RunAlgorithm ()
     {
-        int i, t, k;
-        float Dist = -1;
+        float Dist = INFINITY;
         int[] u;			//Vetor iterador
         int[] r;			//Vetor �timo
 
-        for(i = p; i < n; i++)
-            for (t = 0; t < T; t++)
+        for(int i = p; i < n; i++)
+            for (int t = 0; t < T; t++)
             {
                 if (v[i] > t * b)
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
@@ -113,11 +109,11 @@ public class SubSet
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                     r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
 
-                    for (k = 0; k < p; k++)
+                    for (int k = 0; k < p; k++)
                     {
                         u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                         u = Replace(u[k], i, u);
-                        if (Dist < 0 || (Dist > Distancia(u, t, Modo) && Distancia(u, t, Modo) > 0))
+                        if (Dist == INFINITY || (Dist > Distancia(u, t, Modo) && Distancia(u, t, Modo) > 0))
                         {
                             r = Arrays.copyOf(u, u.length);
                             M[i][t] = Arrays.copyOf(u, u.length);
@@ -175,23 +171,11 @@ public class SubSet
         int[] u = new int[p];
 
         int i;
-        for (i = 0; i < p; i++)
-        {
+        for (i = 0; i < p; i++) {
             if (v[i] != r)
                 u[i] = v[i];
             else u[i] = s;
         }
-        return u;
-    }
-
-    public float[] CopyVectorFloat (float[] v)
-    {
-        float[] u = new float [v.length];
-
-        int i;
-        for (i = 0; i < v.length; i++)
-            u[i] = v[i];
-
         return u;
     }
 }
