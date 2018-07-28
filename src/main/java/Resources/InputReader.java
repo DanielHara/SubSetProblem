@@ -7,9 +7,6 @@ import java.util.StringTokenizer;
 
 public class InputReader {
 
-    File file;
-    Scanner inputFile;
-    String result;
     StringTokenizer stok;
 
     public InputReader(String filename) throws IOException
@@ -35,15 +32,6 @@ public class InputReader {
     public boolean EndOfFile ()
     {
         return !stok.hasMoreTokens();
-    }
-
-    //Fun��o para mostrar na tela todos os Tokens do arquivo, separados por \n.
-    public void Show_Tokens ()
-    {
-        while (!EndOfFile())
-        {
-            System.out.println(NextToken());
-        }
     }
 
 }

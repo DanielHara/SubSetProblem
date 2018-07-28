@@ -1,6 +1,5 @@
 package Algorithm;
 
-import Algorithm.ProblemSet;
 import net.mintern.primitive.Primitive;
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -77,8 +76,8 @@ public class SubSet
 
 
         float Dist = INFINITY;
-        int[] u;			//Vetor iterador
-        int[] r;			//Vetor �timo
+        int[] u;
+        int[] r;
 
         for(int i = p; i < n; i++)
             for (int t = 0; t <= T; t++) {
@@ -117,8 +116,6 @@ public class SubSet
         return mappedValues;
     }
 
-    //Esta fun��o varre o vetor v, e substitui os n�meros r de v pelo n�mero s
-    //, compondo um novo vetor, que � retornado.
     public int[] Replace (int r, int s, int[] v)
     {
         int[] u = IntStream.range(0, v.length)
