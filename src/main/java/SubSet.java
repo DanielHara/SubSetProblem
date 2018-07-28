@@ -1,10 +1,12 @@
 import net.mintern.primitive.Primitive;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class SubSet
 {
-    final int T = 1000;
+    int T_DEFAULT = 1000;
+    int T;
 
     final int MEDIAPARACIMA = 0;
     final int MEDIAPARABAIXO = 1;
@@ -13,13 +15,15 @@ public class SubSet
     final float INFINITY = -1;
     final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
 
-    // Colocar apenas um T opcional.
-    SubSet() {
+    SubSet(int T) {
+        this.T = T;
     }
 
-    //Soma dos elementos do vetor u, que tem 10 posi��es v�lidas, excluindo a posi��o 0 (n�o � usada).
-    //Poderia chamar u de POSIÇÕES do vetor v.
-    public float Soma (int[] u, float[] v)
+    SubSet() {
+        this.T = T_DEFAULT;
+    }
+
+    public float sumOfPositions (int[] u, float[] v)
     {
         float sum = 0;
         for (int position: u) {
@@ -31,20 +35,20 @@ public class SubSet
     public float Distancia (int[] u, int t, int Modo, float b, float[] v)
     {
         if (Modo == MELHORMEDIA)
-            return Math.abs((Soma(u, v) - (float)t*b));
+            return Math.abs((sumOfPositions(u, v) - (float)t*b));
         else
         {
             if (Modo == MEDIAPARACIMA)
             {
-                if ((Soma(u, v) - (float)t*b) < (-1)*FLOAT_COMPARISON_THRESHOLD)
+                if ((sumOfPositions(u, v) - (float)t*b) < (-1)*FLOAT_COMPARISON_THRESHOLD)
                     return INFINITY;
-                else return Math.abs((Soma(u, v) - (float)t*b));
+                else return Math.abs((sumOfPositions(u, v) - (float)t*b));
             }
             else
             {
-                if ((Soma(u, v) - (float)t*b) > FLOAT_COMPARISON_THRESHOLD)
+                if ((sumOfPositions(u, v) - (float)t*b) > FLOAT_COMPARISON_THRESHOLD)
                     return INFINITY;
-                else return Math.abs((Soma(u, v) - (float)t*b));
+                else return Math.abs((sumOfPositions(u, v) - (float)t*b));
             }
         }
 

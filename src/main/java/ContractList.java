@@ -10,8 +10,6 @@ public class ContractList {
 
     public void addContractUnit(float rate) {
         for(int i = 0; i < contractList.size(); i++) {
-            System.out.println("rate = " + rate);
-
             if (isEqual(contractList.get(i).getTaxa(), rate)) {
                 contractList.get(i).Inc();
                 return;
@@ -37,7 +35,7 @@ public class ContractList {
         float rateAccumulator = 0;
         for (PacoteContratos contract: contractList) {
             totalNumberOfContracts = totalNumberOfContracts + contract.getQuantity();
-            rateAccumulator = rateAccumulator + contract.getTaxa();
+            rateAccumulator = rateAccumulator + contract.getTaxa() * contract.getQuantity();
         }
 
         float averageRate = rateAccumulator / totalNumberOfContracts;
@@ -49,12 +47,11 @@ public class ContractList {
         String description = "";
 
         for (PacoteContratos contract: contractList) {
-            System.out.println("quantity = " + contract.getQuantity());
-            System.out.println("taxa = " + contract.getTaxa());
-            description.concat(contract.getQuantity() + " contratos de " + contract.getTaxa() + "\r\n");
+            description =
+                 description.concat(contract.getQuantity() + " contracts with rate " + contract.getTaxa() + "\r\n");
         }
 
-        description.concat("Average: " + this.getAverageRate());
+        description = description.concat("Average: " + this.getAverageRate());
 
         return description;
     }

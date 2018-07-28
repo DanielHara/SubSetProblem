@@ -7,6 +7,9 @@ public class Program {
 
     public static void main (String[] args)
     {
+        String inputFile = "input.txt";
+        String outputFile = "output.txt";
+
         final int MEDIAPARACIMA = 0;
         final int MEDIAPARABAIXO = 1;
         final int MELHORMEDIA = 2;
@@ -78,25 +81,15 @@ public class Program {
 
         String solutionString = solutionContractList.getDescription();
 
-        System.out.println(solutionString);
-
-        String outputFile = "output.txt";
-        FileWriter fw = null;
-        BufferedWriter bw = null;
-
         try
         {
-            fw = new FileWriter(outputFile);
-            bw = new BufferedWriter(fw);
-
-            bw.write(solutionString);
-
-            bw.close();
-            fw.close();
+            OutputWriter outputWriter = new OutputWriter(outputFile);
+            outputWriter.writeString(solutionString);
+            outputWriter.close();
         }
-        catch (IOException e)
+        catch (Exception e)
         {
-            System.out.println("ERRO de I/O:" + e);
+            System.out.println("Error: " + e);
         }
     }
 }

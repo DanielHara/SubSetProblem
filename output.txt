@@ -1,0 +1,3 @@
+2 contracts with rate 9.49
+48 contracts with rate 9.32
+Average: 9.3268
