@@ -50,19 +50,14 @@ public class Program {
         MediaDesejada = Float.parseFloat(input.NextToken());
 
 
-        float[] v = new float[N_ContratosPossiveis + 1];
-
-        ArrayList<PacoteContratos> Valores_Taxas = new ArrayList<PacoteContratos>();
+        float[] v = new float[N_ContratosPossiveis];
 
         int i, j;
-        i = 1;
+        i = 0;
         while(!input.EndOfFile())
         {
             N_ContratosLidos = Integer.parseInt(input.NextToken());
             Taxa_Contrato_Lido = Float.parseFloat(input.NextToken());
-
-            PacoteContratos Novo = new PacoteContratos (Taxa_Contrato_Lido);
-            Valores_Taxas.add(Novo);
 
             for (j = 1; j <= N_ContratosLidos; j++)
             {
