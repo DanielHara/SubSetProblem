@@ -18,7 +18,7 @@ public class SubSet
     final int MELHORMEDIA = 2;
 
     final float INFINITY = -1;
-    final float FLOAT_COMPARISON_THRESHOLD = 0.0001;
+    final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
 
     // Colocar apenas um T opcional.
     SubSet() {
@@ -59,7 +59,7 @@ public class SubSet
 
     }
 
-    public void RunAlgorithm ()
+    public int[] RunAlgorithm (ProblemSet problemSet)
     {
         int Modo = problemSet.getMode();
         float media = problemSet.getDesiredAverage();
@@ -110,10 +110,10 @@ public class SubSet
                     }
                 }
             }
+
+        return M[n-1][T-1];
     }
 
-
-    public float
 
 
     /*
@@ -154,14 +154,9 @@ public class SubSet
     //, compondo um novo vetor, que � retornado.
     public int[] Replace (int r, int s, int[] v)
     {
-        int[] u = new int[p];
-
-        int i;
-        for (i = 0; i < p; i++) {
-            if (v[i] != r)
-                u[i] = v[i];
-            else u[i] = s;
-        }
+        int[] u = IntStream.range(0, v.length)
+                           .map(i -> (v[i] != r)? v[i] : s)
+                           .toArray();
         return u;
     }
 }

@@ -67,10 +67,10 @@ public class Program {
 
         ProblemSet problemSet = new ProblemSet(Modo, N_Escolher, MediaDesejada, v);
 
-        SubSet Algorithm = new SubSet(problemSet);
+        SubSet problemSetSolver = new SubSet();
 
+        int[] solution =  problemSetSolver.RunAlgorithm(problemSet);
 
-        Algorithm.RunAlgorithm();
         // Algorithm.ShowSolution("output.txt");
     }
 }
