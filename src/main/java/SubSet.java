@@ -71,13 +71,16 @@ public class SubSet
     }
 
 
-    SubSet(int _n, float media, int _p, float[] _v, ArrayList<PacoteContratos> _L, int _Modo)
+    // SubSet(int _n, float media, int _p, float[] _v, ArrayList<PacoteContratos> _L, int _Modo)
+    SubSet(ProblemSet problemSet)
     {
-        Modo = _Modo;
-        L = _L;
-        n = _n;
+        Modo = problemSet.getMode();
+        media = problemSet.getDesiredAverage();
+        p = problemSet.getNumberToChoose();
+        v = problemSet.getRates();
+        n = v.size();
+
         T = 1000;
-        p = _p;
 
         b = (float) media * p/T;
 
@@ -167,6 +170,8 @@ public class SubSet
             }
     }
 
+
+    /*
     public void ShowSolution (String filename)
     {
 
@@ -198,24 +203,11 @@ public class SubSet
         {
             System.out.println("ERRO de I/O:" + e);
         }
-    }
+    }   */
 
     public boolean isEqual(float f1, float f2)
     {
         return (Math.abs(f1 - f2) < 0.001);
-    }
-
-    public void ShowSolutionIndexes ()
-    {
-        float Soma = 0;
-        int k;
-        for (k = 1; k <= p; k++)
-        {
-            System.out.printf(M[n][T][k] + " ");
-            Soma = Soma + v[M[n][T][k]];
-        }
-        float media = (float) Soma/p;
-        System.out.printf("\nAverage = " + media);
     }
 
     //Esta fun��o varre o vetor v, e substitui os n�meros r de v pelo n�mero s
@@ -255,12 +247,4 @@ public class SubSet
 
         return u;
     }
-
-    public void ShowVector(int[] u)
-    {
-        int i;
-        for(i = 1; i < u.length; i++)
-            System.out.printf(u[i] + "  ");
-    }
-
 }

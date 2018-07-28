@@ -29,5 +29,4 @@ public class PacoteContratos {
     {
         return (Math.abs((float)((float)taxa - (float)t)) < 0.001);
     }
-
 }

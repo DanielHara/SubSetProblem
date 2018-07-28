@@ -71,5 +71,4 @@ public class Program {
         Algorithm.RunAlgorithm();
         Algorithm.ShowSolution("output.txt");
     }
-
 }
