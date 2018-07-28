@@ -11,20 +11,6 @@ import java.util.stream.IntStream;
 
 public class SubSet
 {
-
-    float[] v;	//Vetor dos n�meros representando as taxas dos fundos
-    int n;      //Tamanho do vetor (excluindo a posi��o 0). n = n�mero de fundos dos quais podemos escolher.
-    int p;
-    float media;
-
-    int [][][] M; //Matriz de vetores, de dimens�es (n- 10) x T, onde T � o n�mero de floats poss�veis (lembrar que a posi��o 0 � ignorada)
-    //M[i][T] � o vetor de 10 elementos representando a melhor solu��o com 10 dos primeiros i elementos
-    //cuja soma melhor aproxima T.
-    //b � o PASSO
-    float b; 		  //T*b � o n�mero a ser melhor aproximado pela soma de v[k], com k pertencente ao vetor M[i][T]
-
-    int Modo;
-
     final int T = 1000;
 
     final int MEDIAPARACIMA = 0;
@@ -32,17 +18,56 @@ public class SubSet
     final int MELHORMEDIA = 2;
 
     final float INFINITY = -1;
+    final float FLOAT_COMPARISON_THRESHOLD = 0.0001;
 
-    // SubSet(int _n, float media, int _p, float[] _v, ArrayList<PacoteContratos> _L, int _Modo)
-    SubSet(ProblemSet problemSet)
+    // Colocar apenas um T opcional.
+    SubSet() {
+    }
+
+
+
+    //Soma dos elementos do vetor u, que tem 10 posi��es v�lidas, excluindo a posi��o 0 (n�o � usada).
+    //Poderia chamar u de POSIÇÕES do vetor v.
+    public float Soma (int[] u, float[] v)
     {
-        Modo = problemSet.getMode();
-        media = problemSet.getDesiredAverage();
-        p = problemSet.getNumberToChoose();
-        v = problemSet.getRates();
-        n = v.length;
+        float sum = 0;
+        for (int position: u) {
+            sum = sum + v[position];
+        }
+        return sum;
+    }
 
-        b = (float) media * p/T;
+    public float Distancia (int[] u, int t, int Modo, float b, float[] v)
+    {
+        if (Modo == MELHORMEDIA)
+            return Math.abs((Soma(u, v) - (float)t*b));
+        else
+        {
+            if (Modo == MEDIAPARACIMA)
+            {
+                if ((Soma(u, v) - (float)t*b) < (-1)*FLOAT_COMPARISON_THRESHOLD)
+                    return INFINITY;
+                else return Math.abs((Soma(u, v) - (float)t*b));
+            }
+            else
+            {
+                if ((Soma(u, v) - (float)t*b) > FLOAT_COMPARISON_THRESHOLD)
+                    return INFINITY;
+                else return Math.abs((Soma(u, v) - (float)t*b));
+            }
+        }
+
+    }
+
+    public void RunAlgorithm ()
+    {
+        int Modo = problemSet.getMode();
+        float media = problemSet.getDesiredAverage();
+        int p = problemSet.getNumberToChoose();
+        float[] v = problemSet.getRates();
+        int n = v.length;
+
+        float b = (float) media * p/T;
 
         if (Modo == MEDIAPARACIMA) {
             Primitive.sort(v, (d1, d2)->Double.compare(d2,d1));
@@ -51,61 +76,24 @@ public class SubSet
             Arrays.sort(v);
         }
 
-        M = new int [n][T][p];
+        int [][][] M = new int [n][T][p];
 
         for (int t = 0; t < T; t++)
             for (int i = 0; i < p; i++)
-                M[p][t][i] = i;
-    }
+                M[p-1][t][i] = i;
 
 
-
-    //Soma dos elementos do vetor u, que tem 10 posi��es v�lidas, excluindo a posi��o 0 (n�o � usada).
-    public float Soma (int[] u)
-    {
-        float Soma = 0;
-        int k;
-        for (k = 0; k < p; k++)
-            Soma = Soma + v[u[k]];
-        return Soma;
-    }
-
-    public float Distancia (int[] u, int t, int Modo)
-    {
-        if (Modo == MELHORMEDIA)
-            return (float)Math.abs((float)(Soma(u) - (float)t*b));
-        else
-        {
-            if (Modo == MEDIAPARACIMA)
-            {
-                if ((float)(Soma(u) - (float)t*b) < -0.001)
-                    return INFINITY;
-                else return (float)Math.abs((float)(Soma(u) - (float)t*b));
-            }
-            else
-            {
-                if ((float)(Soma(u) - (float)t*b) > 0.001)
-                    return INFINITY;
-                else return (float)Math.abs((float)(Soma(u) - (float)t*b));
-            }
-        }
-
-    }
-
-    public void RunAlgorithm ()
-    {
         float Dist = INFINITY;
         int[] u;			//Vetor iterador
         int[] r;			//Vetor �timo
 
         for(int i = p; i < n; i++)
-            for (int t = 0; t < T; t++)
-            {
+            for (int t = 0; t < T; t++) {
                 if (v[i] > t * b)
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                 else
                 {
-                    Dist = Distancia(M[i-1][t], t, Modo);
+                    Dist = Distancia(M[i-1][t], t, Modo, b, v);
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                     r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
 
@@ -113,16 +101,19 @@ public class SubSet
                     {
                         u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                         u = Replace(u[k], i, u);
-                        if (Dist == INFINITY || (Dist > Distancia(u, t, Modo) && Distancia(u, t, Modo) > 0))
+                        if (Dist == INFINITY || (Dist > Distancia(u, t, Modo, b, v) && Distancia(u, t, Modo, b, v) > 0))
                         {
                             r = Arrays.copyOf(u, u.length);
                             M[i][t] = Arrays.copyOf(u, u.length);
-                            Dist = Distancia(r, t, Modo);
+                            Dist = Distancia(r, t, Modo, b, v);
                         }
                     }
                 }
             }
     }
+
+
+    public float
 
 
     /*
@@ -158,11 +149,6 @@ public class SubSet
             System.out.println("ERRO de I/O:" + e);
         }
     }   */
-
-    public boolean isEqual(float f1, float f2)
-    {
-        return (Math.abs(f1 - f2) < 0.001);
-    }
 
     //Esta fun��o varre o vetor v, e substitui os n�meros r de v pelo n�mero s
     //, compondo um novo vetor, que � retornado.
