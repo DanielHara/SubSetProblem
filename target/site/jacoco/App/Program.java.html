@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Program.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SubSetSolver</a> &gt; <a href="index.source.html" class="el_package">App</a> &gt; <span class="el_source">Program.java</span></div><h1>Program.java</h1><pre class="source lang-java linenums">package App;
+
+import Algorithm.AlgorithmMode;
+import Algorithm.ProblemSet;
+import Algorithm.SubSet;
+import Resources.ContractList;
+import Resources.InputReader;
+import Resources.OutputWriter;
+
+<span class="nc" id="L10">public class Program {</span>
+
+    public static void main (String[] args)
+    {
+<span class="nc" id="L14">        String inputFile = &quot;input.txt&quot;;</span>
+<span class="nc" id="L15">        String outputFile = &quot;output.txt&quot;;</span>
+
+<span class="nc" id="L17">        InputReader input = null;</span>
+
+        try
+        {
+<span class="nc" id="L21">            input = new InputReader(inputFile);</span>
+        }
+<span class="nc" id="L23">        catch (Exception e)</span>
+        {
+<span class="nc" id="L25">            System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L26">            return;</span>
+<span class="nc" id="L27">        }</span>
+
+<span class="nc" id="L29">        AlgorithmMode Modo = AlgorithmMode.MELHORMEDIA;</span>
+
+        int N_ContratosPossiveis;
+        int N_Escolher;
+        float MediaDesejada;
+
+        int N_ContratosLidos;
+        float Taxa_Contrato_Lido;
+
+<span class="nc" id="L38">        String ModeAsString = input.NextToken();</span>
+
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (ModeAsString.toUpperCase().contains(&quot;MEDIAPARACIMA&quot;))</span>
+<span class="nc" id="L41">            Modo = AlgorithmMode.MEDIAPARACIMA;</span>
+        else
+        {
+<span class="nc bnc" id="L44" title="All 2 branches missed.">            if (ModeAsString.toUpperCase().contains(&quot;MEDIAPARABAIXO&quot;))</span>
+<span class="nc" id="L45">                Modo = AlgorithmMode.MEDIAPARABAIXO;</span>
+        }
+
+<span class="nc" id="L48">        N_ContratosPossiveis = Integer.parseInt(input.NextToken());</span>
+<span class="nc" id="L49">        N_Escolher = Integer.parseInt(input.NextToken());</span>
+<span class="nc" id="L50">        MediaDesejada = Float.parseFloat(input.NextToken());</span>
+
+
+<span class="nc" id="L53">        float[] v = new float[N_ContratosPossiveis];</span>
+
+        int i, j;
+<span class="nc" id="L56">        i = 0;</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        while(!input.EndOfFile())</span>
+        {
+<span class="nc" id="L59">            N_ContratosLidos = Integer.parseInt(input.NextToken());</span>
+<span class="nc" id="L60">            Taxa_Contrato_Lido = Float.parseFloat(input.NextToken());</span>
+
+<span class="nc bnc" id="L62" title="All 2 branches missed.">            for (j = 1; j &lt;= N_ContratosLidos; j++)</span>
+            {
+<span class="nc" id="L64">                v[i] = Taxa_Contrato_Lido;</span>
+<span class="nc" id="L65">                i++;</span>
+            }
+        }
+
+<span class="nc" id="L69">        ProblemSet problemSet = new ProblemSet(Modo, N_Escolher, MediaDesejada, v);</span>
+
+<span class="nc" id="L71">        SubSet problemSetSolver = new SubSet();</span>
+
+<span class="nc" id="L73">        float[] solutionRates =  problemSetSolver.RunAlgorithm(problemSet);</span>
+
+<span class="nc" id="L75">        ContractList solutionContractList = new ContractList(solutionRates);</span>
+
+<span class="nc" id="L77">        String solutionString = solutionContractList.getDescription();</span>
+
+        try
+        {
+<span class="nc" id="L81">            OutputWriter outputWriter = new OutputWriter(outputFile);</span>
+<span class="nc" id="L82">            outputWriter.writeString(solutionString);</span>
+<span class="nc" id="L83">            outputWriter.close();</span>
+        }
+<span class="nc" id="L85">        catch (Exception e)</span>
+        {
+<span class="nc" id="L87">            System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L88">        }</span>
+<span class="nc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

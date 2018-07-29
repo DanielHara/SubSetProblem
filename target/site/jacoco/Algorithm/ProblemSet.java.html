@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProblemSet.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SubSetSolver</a> &gt; <a href="index.source.html" class="el_package">Algorithm</a> &gt; <span class="el_source">ProblemSet.java</span></div><h1>ProblemSet.java</h1><pre class="source lang-java linenums">package Algorithm;
+
+import java.util.Arrays;
+
+public class ProblemSet {
+    private AlgorithmMode mode;
+    private int numberToChoose;
+    private float desiredAverage;
+    private float[] rates;
+
+<span class="nc" id="L11">    public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {</span>
+<span class="nc" id="L12">        this.mode = mode;</span>
+<span class="nc" id="L13">        this.numberToChoose = numberToChoose;</span>
+<span class="nc" id="L14">        this.desiredAverage = desiredAverage;</span>
+<span class="nc" id="L15">        this.rates = Arrays.copyOf(rates, rates.length);</span>
+<span class="nc" id="L16">    }</span>
+
+    public AlgorithmMode getMode() {
+<span class="nc" id="L19">        return this.mode;</span>
+    }
+
+    public int getNumberToChoose() {
+<span class="nc" id="L23">        return this.numberToChoose;</span>
+    }
+
+    public float getDesiredAverage() {
+<span class="nc" id="L27">        return this.desiredAverage;</span>
+    }
+
+    public float[] getRates() {
+<span class="nc" id="L31">        return Arrays.copyOf(this.rates, this.rates.length);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

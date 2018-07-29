@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SubSet.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SubSetSolver</a> &gt; <a href="index.source.html" class="el_package">Algorithm</a> &gt; <span class="el_source">SubSet.java</span></div><h1>SubSet.java</h1><pre class="source lang-java linenums">package Algorithm;
+
+import net.mintern.primitive.Primitive;
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class SubSet
+{
+<span class="nc" id="L9">    int T_DEFAULT = 1000;</span>
+    int T;
+
+<span class="nc" id="L12">    final float INFINITY = -1;</span>
+<span class="nc" id="L13">    final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;</span>
+
+<span class="nc" id="L15">    public SubSet(int T) {</span>
+<span class="nc" id="L16">        this.T = T;</span>
+<span class="nc" id="L17">    }</span>
+
+<span class="nc" id="L19">    public SubSet() {</span>
+<span class="nc" id="L20">        this.T = T_DEFAULT;</span>
+<span class="nc" id="L21">    }</span>
+
+    public float sumOfPositions (int[] u, float[] v)
+    {
+<span class="nc" id="L25">        float sum = 0;</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        for (int position: u) {</span>
+<span class="nc" id="L27">            sum = sum + v[position];</span>
+        }
+<span class="nc" id="L29">        return sum;</span>
+    }
+
+    public float Distancia (int[] u, int t, AlgorithmMode Modo, float b, float[] v)
+    {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (Modo == AlgorithmMode.MELHORMEDIA)</span>
+<span class="nc" id="L35">            return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
+        else
+        {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">            if (Modo == AlgorithmMode.MEDIAPARACIMA)</span>
+            {
+<span class="nc bnc" id="L40" title="All 2 branches missed.">                if ((sumOfPositions(u, v) - (float)t*b) &lt; (-1)*FLOAT_COMPARISON_THRESHOLD)</span>
+<span class="nc" id="L41">                    return INFINITY;</span>
+<span class="nc" id="L42">                else return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
+            }
+            else
+            {
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                if ((sumOfPositions(u, v) - (float)t*b) &gt; FLOAT_COMPARISON_THRESHOLD)</span>
+<span class="nc" id="L47">                    return INFINITY;</span>
+<span class="nc" id="L48">                else return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
+            }
+        }
+
+    }
+
+    public float[] RunAlgorithm (ProblemSet problemSet)
+    {
+<span class="nc" id="L56">        AlgorithmMode Modo = problemSet.getMode();</span>
+<span class="nc" id="L57">        float media = problemSet.getDesiredAverage();</span>
+<span class="nc" id="L58">        int p = problemSet.getNumberToChoose();</span>
+<span class="nc" id="L59">        float[] v = problemSet.getRates();</span>
+<span class="nc" id="L60">        int n = v.length;</span>
+
+<span class="nc" id="L62">        float b = (float) media * p/T;</span>
+
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (Modo == AlgorithmMode.MEDIAPARACIMA) {</span>
+<span class="nc" id="L65">            Primitive.sort(v, (d1, d2)-&gt;Double.compare(d2,d1));</span>
+        }
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        else if (Modo == AlgorithmMode.MEDIAPARABAIXO) {</span>
+<span class="nc" id="L68">            Arrays.sort(v);</span>
+        }
+
+<span class="nc" id="L71">        int [][][] M = new int [n][T+1][p];</span>
+
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        for (int t = 0; t &lt;= T; t++)</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            for (int i = 0; i &lt; p; i++)</span>
+<span class="nc" id="L75">                M[p-1][t][i] = i;</span>
+
+
+<span class="nc" id="L78">        float Dist = INFINITY;</span>
+        int[] u;
+        int[] r;
+
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        for(int i = p; i &lt; n; i++)</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">            for (int t = 0; t &lt;= T; t++) {</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">                if (v[i] &gt; t * b)</span>
+<span class="nc" id="L85">                    M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
+                else
+                {
+<span class="nc" id="L88">                    Dist = Distancia(M[i-1][t], t, Modo, b, v);</span>
+<span class="nc" id="L89">                    M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
+<span class="nc" id="L90">                    r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
+
+<span class="nc bnc" id="L92" title="All 2 branches missed.">                    for (int k = 0; k &lt; p; k++)</span>
+                    {
+<span class="nc" id="L94">                        u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
+<span class="nc" id="L95">                        u = Replace(u[k], i, u);</span>
+<span class="nc bnc" id="L96" title="All 6 branches missed.">                        if (Dist == INFINITY || (Dist &gt; Distancia(u, t, Modo, b, v) &amp;&amp; Distancia(u, t, Modo, b, v) &gt; 0))</span>
+                        {
+<span class="nc" id="L98">                            r = Arrays.copyOf(u, u.length);</span>
+<span class="nc" id="L99">                            M[i][t] = Arrays.copyOf(u, u.length);</span>
+<span class="nc" id="L100">                            Dist = Distancia(r, t, Modo, b, v);</span>
+                        }
+                    }
+                }
+            }
+
+<span class="nc" id="L106">        return mapPositionsToValues(M[n-1][T], v);</span>
+    }
+
+
+    private float[] mapPositionsToValues(int[] u, float[] v) {
+<span class="nc" id="L111">        float[] mappedValues = new float[u.length];</span>
+
+<span class="nc bnc" id="L113" title="All 2 branches missed.">        for(int i = 0; i &lt; u.length; i++) {</span>
+<span class="nc" id="L114">            mappedValues[i] = v[u[i]];</span>
+        }
+<span class="nc" id="L116">        return mappedValues;</span>
+    }
+
+    public int[] Replace (int r, int s, int[] v)
+    {
+<span class="nc" id="L121">        int[] u = IntStream.range(0, v.length)</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">                           .map(i -&gt; (v[i] != r)? v[i] : s)</span>
+<span class="nc" id="L123">                           .toArray();</span>
+<span class="nc" id="L124">        return u;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
