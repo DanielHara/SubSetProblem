@@ -4,6 +4,6 @@ SubSetSolver,Resources,ContractList,16,173,2,14,4,34,3,12,1,6
 SubSetSolver,Resources,InputReader,52,0,4,0,11,0,5,0,3,0
 SubSetSolver,Resources,OutputWriter,34,0,0,0,11,0,3,0,3,0
 SubSetSolver,Resources,PacoteContratos,13,22,2,0,1,8,2,4,1,4
-SubSetSolver,Algorithm,AlgorithmMode,48,0,0,0,4,0,4,0,4,0
-SubSetSolver,Algorithm,SubSet,435,0,36,0,60,0,27,0,9,0
-SubSetSolver,Algorithm,ProblemSet,34,0,0,0,10,0,5,0,5,0
+SubSetSolver,Algorithm,AlgorithmMode,9,39,0,0,0,4,2,2,2,2
+SubSetSolver,Algorithm,SubSet,26,409,2,34,4,56,3,24,1,8
+SubSetSolver,Algorithm,ProblemSet,0,34,0,0,0,10,0,5,0,5
