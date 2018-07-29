@@ -26,47 +26,44 @@ public class Program {
             return;
         }
 
-        AlgorithmMode Modo = AlgorithmMode.MELHORMEDIA;
+        AlgorithmMode Modo = AlgorithmMode.BEST_AVERAGE;
 
-        int N_ContratosPossiveis;
-        int N_Escolher;
-        float MediaDesejada;
+        int numberPossibleContracts;
+        int numberToChoose;
+        float desiredAverage;
 
-        int N_ContratosLidos;
-        float Taxa_Contrato_Lido;
+        int numberReadContracts;
+        float rateReadContract;
 
         String ModeAsString = input.NextToken();
 
-        if (ModeAsString.toUpperCase().contains("MEDIAPARACIMA"))
-            Modo = AlgorithmMode.MEDIAPARACIMA;
-        else
-        {
-            if (ModeAsString.toUpperCase().contains("MEDIAPARABAIXO"))
-                Modo = AlgorithmMode.MEDIAPARABAIXO;
-        }
+        if (ModeAsString.toUpperCase().contains("ABOVE_AVERAGE"))
+            Modo = AlgorithmMode.ABOVE_AVERAGE;
+        else if (ModeAsString.toUpperCase().contains("BELOW_AVERAGE"))
+            Modo = AlgorithmMode.BELOW_AVERAGE;
 
-        N_ContratosPossiveis = Integer.parseInt(input.NextToken());
-        N_Escolher = Integer.parseInt(input.NextToken());
-        MediaDesejada = Float.parseFloat(input.NextToken());
+        numberPossibleContracts = Integer.parseInt(input.NextToken());
+        numberToChoose = Integer.parseInt(input.NextToken());
+        desiredAverage = Float.parseFloat(input.NextToken());
 
 
-        float[] v = new float[N_ContratosPossiveis];
+        float[] v = new float[numberPossibleContracts];
 
         int i, j;
         i = 0;
         while(!input.EndOfFile())
         {
-            N_ContratosLidos = Integer.parseInt(input.NextToken());
-            Taxa_Contrato_Lido = Float.parseFloat(input.NextToken());
+            numberReadContracts = Integer.parseInt(input.NextToken());
+            rateReadContract = Float.parseFloat(input.NextToken());
 
-            for (j = 1; j <= N_ContratosLidos; j++)
+            for (j = 1; j <= numberReadContracts; j++)
             {
-                v[i] = Taxa_Contrato_Lido;
+                v[i] = rateReadContract;
                 i++;
             }
         }
 
-        ProblemSet problemSet = new ProblemSet(Modo, N_Escolher, MediaDesejada, v);
+        ProblemSet problemSet = new ProblemSet(Modo, numberToChoose, desiredAverage, v);
 
         SubSet problemSetSolver = new SubSet();
 

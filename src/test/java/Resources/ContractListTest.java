@@ -32,18 +32,4 @@ public class ContractListTest {
         Assert.assertThat(actualDescription, containsString(secondDescription));
         Assert.assertThat(actualDescription, containsString(averageDescription));
     }
-
-    /*
-    @Test
-    public void addContractRates(){
-        float[] rates = {9, 8, 9, 8};
-
-        ContractList mockedContractList = mock(ContractList.class);
-
-        Mockito.doNothing().when(mockedContractList).addContractUnit(Mockito.anyFloat());
-        when(mockedContractList.addContractRates(Matchers.<float[]>any())).thenCallRealMethod();
-
-        mockedContractList.addContractRates(rates);
-        Mockito.verify(mockedContractList).addContractUnit(Mockito.anyFloat());
-    }*/
 }

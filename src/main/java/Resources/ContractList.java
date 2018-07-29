@@ -1,11 +1,11 @@
 package Resources;
 
-import Resources.PacoteContratos;
+import Resources.ContractPackage;
 
 import java.util.ArrayList;
 
 public class ContractList {
-    private ArrayList<PacoteContratos> contractList;
+    private ArrayList<ContractPackage> contractList;
     final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
     final String NO_SOLUTION_FOUND = "NO SOLUTION FOUND";
 
@@ -15,12 +15,12 @@ public class ContractList {
 
     public void addContractUnit(float rate) {
         for(int i = 0; i < contractList.size(); i++) {
-            if (isEqual(contractList.get(i).getTaxa(), rate)) {
+            if (isEqual(contractList.get(i).getRate(), rate)) {
                 contractList.get(i).Inc();
                 return;
             }
         }
-        PacoteContratos newContract = new PacoteContratos(rate);
+        ContractPackage newContract = new ContractPackage(rate);
         contractList.add(newContract);
     }
 
@@ -45,9 +45,9 @@ public class ContractList {
     public float getAverageRate() {
         int totalNumberOfContracts = 0;
         float rateAccumulator = 0;
-        for (PacoteContratos contract: contractList) {
+        for (ContractPackage contract: contractList) {
             totalNumberOfContracts = totalNumberOfContracts + contract.getQuantity();
-            rateAccumulator = rateAccumulator + contract.getTaxa() * contract.getQuantity();
+            rateAccumulator = rateAccumulator + contract.getRate() * contract.getQuantity();
         }
 
         float averageRate = rateAccumulator / totalNumberOfContracts;
@@ -62,9 +62,9 @@ public class ContractList {
             return NO_SOLUTION_FOUND;
         }
 
-        for (PacoteContratos contract: contractList) {
+        for (ContractPackage contract: contractList) {
             description =
-                 description.concat(contract.getQuantity() + " contracts with rate " + contract.getTaxa() + "\r\n");
+                 description.concat(contract.getQuantity() + " contracts with rate " + contract.getRate() + "\r\n");
         }
 
         description = description.concat("Average: " + this.getAverageRate());

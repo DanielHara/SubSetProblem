@@ -31,11 +31,11 @@ public class SubSet
 
     public float Distancia (int[] u, int t, AlgorithmMode Modo, float b, float[] v)
     {
-        if (Modo == AlgorithmMode.MELHORMEDIA)
+        if (Modo == AlgorithmMode.BEST_AVERAGE)
             return Math.abs((sumOfPositions(u, v) - (float)t*b));
         else
         {
-            if (Modo == AlgorithmMode.MEDIAPARACIMA)
+            if (Modo == AlgorithmMode.ABOVE_AVERAGE)
             {
                 if ((sumOfPositions(u, v) - (float)t*b) < (-1)*FLOAT_COMPARISON_THRESHOLD)
                     return INFINITY;
@@ -61,10 +61,10 @@ public class SubSet
 
         float b = (float) media * p/T;
 
-        if (Modo == AlgorithmMode.MEDIAPARACIMA) {
+        if (Modo == AlgorithmMode.ABOVE_AVERAGE) {
             Primitive.sort(v, (d1, d2)->Double.compare(d2,d1));
         }
-        else if (Modo == AlgorithmMode.MEDIAPARABAIXO) {
+        else if (Modo == AlgorithmMode.BELOW_AVERAGE) {
             Arrays.sort(v);
         }
 

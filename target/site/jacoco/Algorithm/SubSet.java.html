@@ -31,11 +31,11 @@ public class SubSet
 
     public float Distancia (int[] u, int t, AlgorithmMode Modo, float b, float[] v)
     {
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (Modo == AlgorithmMode.MELHORMEDIA)</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (Modo == AlgorithmMode.BEST_AVERAGE)</span>
 <span class="fc" id="L35">            return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
         else
         {
-<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (Modo == AlgorithmMode.MEDIAPARACIMA)</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (Modo == AlgorithmMode.ABOVE_AVERAGE)</span>
             {
 <span class="fc bfc" id="L40" title="All 2 branches covered.">                if ((sumOfPositions(u, v) - (float)t*b) &lt; (-1)*FLOAT_COMPARISON_THRESHOLD)</span>
 <span class="fc" id="L41">                    return INFINITY;</span>
@@ -61,10 +61,10 @@ public class SubSet
 
 <span class="fc" id="L62">        float b = (float) media * p/T;</span>
 
-<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (Modo == AlgorithmMode.MEDIAPARACIMA) {</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (Modo == AlgorithmMode.ABOVE_AVERAGE) {</span>
 <span class="fc" id="L65">            Primitive.sort(v, (d1, d2)-&gt;Double.compare(d2,d1));</span>
         }
-<span class="fc bfc" id="L67" title="All 2 branches covered.">        else if (Modo == AlgorithmMode.MEDIAPARABAIXO) {</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        else if (Modo == AlgorithmMode.BELOW_AVERAGE) {</span>
 <span class="fc" id="L68">            Arrays.sort(v);</span>
         }
 

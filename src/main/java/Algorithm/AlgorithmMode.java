@@ -1,7 +1,7 @@
 package Algorithm;
 
 public enum AlgorithmMode {
-    MEDIAPARACIMA,
-    MEDIAPARABAIXO,
-    MELHORMEDIA
+    ABOVE_AVERAGE,
+    BELOW_AVERAGE,
+    BEST_AVERAGE
 }

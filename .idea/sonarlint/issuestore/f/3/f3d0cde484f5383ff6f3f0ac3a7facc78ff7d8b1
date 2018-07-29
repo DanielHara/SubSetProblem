@@ -1,0 +1,12 @@
+
+„squid:S00116	"eRename this field "FLOAT_COMPARISON_THRESHOLD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å§ÅÙ8™Ñ¶˜Î,
+?squid:S1170	"!Make this final field static too.(Å§ÅÙ8™Ñ¶˜Î,
+{squid:S00116
+"\Rename this field "NO_SOLUTION_FOUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½¯Œü8™Ñ¶˜Î,
+ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éŠ—Î8™Ñ¶˜Î,
+>squid:S1700"Rename field "contractList"(¶ĞìÀÿÿÿÿÿ8™Ñ¶˜Î,
+squid:S14885"cImmediately return this expression instead of assigning it to the temporary variable "averageRate".(Ü¯Í8Å†·˜Î,
+asquid:S1155=">Use isEmpty() to check whether the collection is empty or not.(æ•å×ûÿÿÿÿ8Å†·˜Î,
+?squid:S1170
+"!Make this final field static too.(½¯Œü8™Ñ¶˜Î,
+jsquid:S35185"LMake sure "totalNumberOfContracts" can't be zero before doing this division.(Ü¯Í8Å†·˜Î,

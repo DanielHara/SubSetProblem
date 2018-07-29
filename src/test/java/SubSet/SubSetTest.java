@@ -17,7 +17,7 @@ public class SubSetTest {
         float[] rates = {9, 9, 10};
         float desiredAverage = 9.1f;
 
-        ProblemSet problemSet = new ProblemSet(AlgorithmMode.MEDIAPARACIMA,
+        ProblemSet problemSet = new ProblemSet(AlgorithmMode.ABOVE_AVERAGE,
                                                numberToChoose,
                                                desiredAverage,
                                                rates);
@@ -36,7 +36,7 @@ public class SubSetTest {
         float[] rates = {9, 10, 10};
         float desiredAverage = 9.9f;
 
-        ProblemSet problemSet = new ProblemSet(AlgorithmMode.MEDIAPARABAIXO,
+        ProblemSet problemSet = new ProblemSet(AlgorithmMode.BELOW_AVERAGE,
                 numberToChoose,
                 desiredAverage,
                 rates);
@@ -55,7 +55,7 @@ public class SubSetTest {
         float[] rates = {9, 9, 10, 10, 20};
         float desiredAverage = 9.5f;
 
-        ProblemSet problemSet = new ProblemSet(AlgorithmMode.MELHORMEDIA,
+        ProblemSet problemSet = new ProblemSet(AlgorithmMode.BEST_AVERAGE,
                                                numberToChoose,
                                                desiredAverage,
                                                rates);
@@ -99,17 +99,17 @@ public class SubSetTest {
             rates[i] = 9.49f;
         }
 
-        ProblemSet problemSetBestAverage = new ProblemSet(AlgorithmMode.MELHORMEDIA,
+        ProblemSet problemSetBestAverage = new ProblemSet(AlgorithmMode.BEST_AVERAGE,
                                                           numberToChoose,
                                                           desiredAverage,
                                                           rates);
 
-        ProblemSet problemSetBelowAverage = new ProblemSet(AlgorithmMode.MEDIAPARABAIXO,
+        ProblemSet problemSetBelowAverage = new ProblemSet(AlgorithmMode.BELOW_AVERAGE,
                 numberToChoose,
                 desiredAverage,
                 rates);
 
-        ProblemSet problemSetAboveAverage = new ProblemSet(AlgorithmMode.MEDIAPARACIMA,
+        ProblemSet problemSetAboveAverage = new ProblemSet(AlgorithmMode.ABOVE_AVERAGE,
                 numberToChoose,
                 desiredAverage,
                 rates);
