@@ -1,4 +1,3 @@
-300 contracts with rate 9.49
-200 contracts with rate 9.32
-100 contracts with rate 9.23
-Average: 9.39
+1 contracts with rate 10.0
+1 contracts with rate 9.0
+Average: 9.5

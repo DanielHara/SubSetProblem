@@ -93,7 +93,7 @@ public class SubSet
                     {
                         u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
                         u = Replace(u[k], i, u);
-                        if (Dist == INFINITY || (Dist > Distancia(u, t, Modo, b, v) && Distancia(u, t, Modo, b, v) > 0))
+                        if (Dist == INFINITY || (Dist > Distancia(u, t, Modo, b, v) && Distancia(u, t, Modo, b, v) >= 0))
                         {
                             r = Arrays.copyOf(u, u.length);
                             M[i][t] = Arrays.copyOf(u, u.length);

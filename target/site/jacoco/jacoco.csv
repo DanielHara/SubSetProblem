@@ -5,5 +5,5 @@ SubSetSolver,Resources,InputReader,52,0,4,0,11,0,5,0,3,0
 SubSetSolver,Resources,OutputWriter,34,0,0,0,11,0,3,0,3,0
 SubSetSolver,Resources,PacoteContratos,13,22,2,0,1,8,2,4,1,4
 SubSetSolver,Algorithm,AlgorithmMode,9,39,0,0,0,4,2,2,2,2
-SubSetSolver,Algorithm,SubSet,26,409,2,34,4,56,3,24,1,8
+SubSetSolver,Algorithm,SubSet,15,420,0,36,3,57,1,26,1,8
 SubSetSolver,Algorithm,ProblemSet,0,34,0,0,0,10,0,5,0,5

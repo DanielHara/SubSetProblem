@@ -31,8 +31,8 @@ public class SubSet
 
     public float Distancia (int[] u, int t, AlgorithmMode Modo, float b, float[] v)
     {
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (Modo == AlgorithmMode.MELHORMEDIA)</span>
-<span class="nc" id="L35">            return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (Modo == AlgorithmMode.MELHORMEDIA)</span>
+<span class="fc" id="L35">            return Math.abs((sumOfPositions(u, v) - (float)t*b));</span>
         else
         {
 <span class="fc bfc" id="L38" title="All 2 branches covered.">            if (Modo == AlgorithmMode.MEDIAPARACIMA)</span>
@@ -64,7 +64,7 @@ public class SubSet
 <span class="fc bfc" id="L64" title="All 2 branches covered.">        if (Modo == AlgorithmMode.MEDIAPARACIMA) {</span>
 <span class="fc" id="L65">            Primitive.sort(v, (d1, d2)-&gt;Double.compare(d2,d1));</span>
         }
-<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        else if (Modo == AlgorithmMode.MEDIAPARABAIXO) {</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        else if (Modo == AlgorithmMode.MEDIAPARABAIXO) {</span>
 <span class="fc" id="L68">            Arrays.sort(v);</span>
         }
 
@@ -93,7 +93,7 @@ public class SubSet
                     {
 <span class="fc" id="L94">                        u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
 <span class="fc" id="L95">                        u = Replace(u[k], i, u);</span>
-<span class="fc bfc" id="L96" title="All 6 branches covered.">                        if (Dist == INFINITY || (Dist &gt; Distancia(u, t, Modo, b, v) &amp;&amp; Distancia(u, t, Modo, b, v) &gt; 0))</span>
+<span class="fc bfc" id="L96" title="All 6 branches covered.">                        if (Dist == INFINITY || (Dist &gt; Distancia(u, t, Modo, b, v) &amp;&amp; Distancia(u, t, Modo, b, v) &gt;= 0))</span>
                         {
 <span class="fc" id="L98">                            r = Arrays.copyOf(u, u.length);</span>
 <span class="fc" id="L99">                            M[i][t] = Arrays.copyOf(u, u.length);</span>
