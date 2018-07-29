@@ -59,7 +59,7 @@ public class SubSet
 <span class="fc" id="L59">        float[] v = problemSet.getRates();</span>
 <span class="fc" id="L60">        int n = v.length;</span>
 
-<span class="fc" id="L62">        float b = (float) media * p/T;</span>
+<span class="fc" id="L62">        float b = media * p/T;</span>
 
 <span class="fc bfc" id="L64" title="All 2 branches covered.">        if (Modo == AlgorithmMode.ABOVE_AVERAGE) {</span>
 <span class="fc" id="L65">            Primitive.sort(v, (d1, d2)-&gt;Double.compare(d2,d1));</span>
@@ -75,7 +75,7 @@ public class SubSet
 <span class="fc" id="L75">                M[p-1][t][i] = i;</span>
 
 
-<span class="fc" id="L78">        float Dist = INFINITY;</span>
+        float Dist;
         int[] u;
         int[] r;
 
@@ -87,41 +87,40 @@ public class SubSet
                 {
 <span class="fc" id="L88">                    Dist = Distancia(M[i-1][t], t, Modo, b, v);</span>
 <span class="fc" id="L89">                    M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
-<span class="fc" id="L90">                    r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
 
-<span class="fc bfc" id="L92" title="All 2 branches covered.">                    for (int k = 0; k &lt; p; k++)</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">                    for (int k = 0; k &lt; p; k++)</span>
                     {
-<span class="fc" id="L94">                        u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
-<span class="fc" id="L95">                        u = Replace(u[k], i, u);</span>
-<span class="fc bfc" id="L96" title="All 6 branches covered.">                        if (Dist == INFINITY || (Dist &gt; Distancia(u, t, Modo, b, v) &amp;&amp; Distancia(u, t, Modo, b, v) &gt;= 0))</span>
+<span class="fc" id="L93">                        u = Arrays.copyOf(M[i-1][t], M[i-1][t].length);</span>
+<span class="fc" id="L94">                        u = Replace(u[k], i, u);</span>
+<span class="fc bfc" id="L95" title="All 6 branches covered.">                        if (Dist == INFINITY || (Dist &gt; Distancia(u, t, Modo, b, v) &amp;&amp; Distancia(u, t, Modo, b, v) &gt;= 0))</span>
                         {
-<span class="fc" id="L98">                            r = Arrays.copyOf(u, u.length);</span>
-<span class="fc" id="L99">                            M[i][t] = Arrays.copyOf(u, u.length);</span>
-<span class="fc" id="L100">                            Dist = Distancia(r, t, Modo, b, v);</span>
+<span class="fc" id="L97">                            r = Arrays.copyOf(u, u.length);</span>
+<span class="fc" id="L98">                            M[i][t] = Arrays.copyOf(u, u.length);</span>
+<span class="fc" id="L99">                            Dist = Distancia(r, t, Modo, b, v);</span>
                         }
                     }
                 }
             }
 
-<span class="fc" id="L106">        return mapPositionsToValues(M[n-1][T], v);</span>
+<span class="fc" id="L105">        return mapPositionsToValues(M[n-1][T], v);</span>
     }
 
 
     private float[] mapPositionsToValues(int[] u, float[] v) {
-<span class="fc" id="L111">        float[] mappedValues = new float[u.length];</span>
+<span class="fc" id="L110">        float[] mappedValues = new float[u.length];</span>
 
-<span class="fc bfc" id="L113" title="All 2 branches covered.">        for(int i = 0; i &lt; u.length; i++) {</span>
-<span class="fc" id="L114">            mappedValues[i] = v[u[i]];</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        for(int i = 0; i &lt; u.length; i++) {</span>
+<span class="fc" id="L113">            mappedValues[i] = v[u[i]];</span>
         }
-<span class="fc" id="L116">        return mappedValues;</span>
+<span class="fc" id="L115">        return mappedValues;</span>
     }
 
     public int[] Replace (int r, int s, int[] v)
     {
-<span class="fc" id="L121">        int[] u = IntStream.range(0, v.length)</span>
-<span class="fc bfc" id="L122" title="All 2 branches covered.">                           .map(i -&gt; (v[i] != r)? v[i] : s)</span>
-<span class="fc" id="L123">                           .toArray();</span>
-<span class="fc" id="L124">        return u;</span>
+<span class="fc" id="L120">        int[] u = IntStream.range(0, v.length)</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">                           .map(i -&gt; (v[i] != r)? v[i] : s)</span>
+<span class="fc" id="L122">                           .toArray();</span>
+<span class="fc" id="L123">        return u;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

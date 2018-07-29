@@ -59,7 +59,7 @@ public class SubSet
         float[] v = problemSet.getRates();
         int n = v.length;
 
-        float b = (float) media * p/T;
+        float b = media * p/T;
 
         if (Modo == AlgorithmMode.ABOVE_AVERAGE) {
             Primitive.sort(v, (d1, d2)->Double.compare(d2,d1));
@@ -75,7 +75,7 @@ public class SubSet
                 M[p-1][t][i] = i;
 
 
-        float Dist = INFINITY;
+        float Dist;
         int[] u;
         int[] r;
 
@@ -87,7 +87,6 @@ public class SubSet
                 {
                     Dist = Distancia(M[i-1][t], t, Modo, b, v);
                     M[i][t] = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
-                    r = Arrays.copyOf(M[i-1][t], M[i-1][t].length);
 
                     for (int k = 0; k < p; k++)
                     {
