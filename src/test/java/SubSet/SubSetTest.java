@@ -24,7 +24,7 @@ public class SubSetTest {
 
         SubSet subSet = new SubSet();
 
-        float[] solution = subSet.RunAlgorithm(problemSet);
+        float[] solution = subSet.runAlgorithm(problemSet);
         Arrays.sort(solution);
 
         Assert.assertArrayEquals(new float[]{9, 10}, solution, 0.1f);
@@ -43,7 +43,7 @@ public class SubSetTest {
 
         SubSet subSet = new SubSet();
 
-        float[] solution = subSet.RunAlgorithm(problemSet);
+        float[] solution = subSet.runAlgorithm(problemSet);
         Arrays.sort(solution);
 
         Assert.assertArrayEquals(new float[]{9, 10}, solution, 0.1f);
@@ -62,7 +62,7 @@ public class SubSetTest {
 
         SubSet subSet = new SubSet();
 
-        float[] solution = subSet.RunAlgorithm(problemSet);
+        float[] solution = subSet.runAlgorithm(problemSet);
         Arrays.sort(solution);
 
         Assert.assertArrayEquals(new float[]{9, 10}, solution, 0.1f);
@@ -116,9 +116,9 @@ public class SubSetTest {
 
 
         SubSet subSet = new SubSet();
-        float[] solutionBestAverage = subSet.RunAlgorithm(problemSetBestAverage);
-        float[] solutionBelowAverage = subSet.RunAlgorithm(problemSetBelowAverage);
-        float[] solutionAboveAverage = subSet.RunAlgorithm(problemSetAboveAverage);
+        float[] solutionBestAverage = subSet.runAlgorithm(problemSetBestAverage);
+        float[] solutionBelowAverage = subSet.runAlgorithm(problemSetBelowAverage);
+        float[] solutionAboveAverage = subSet.runAlgorithm(problemSetAboveAverage);
 
         Assert.assertEquals(desiredAverage, averageArray(solutionBestAverage), ERROR_THRESHOLD);
         Assert.assertEquals(desiredAverage, averageArray(solutionBelowAverage), ERROR_THRESHOLD);

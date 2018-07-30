@@ -28,3 +28,5 @@ T
 $src/test/java/SubSet/SubSetTest.java,3/2/326663e939fb20765cfe8ae88f11d8d127890038
 N
 src/main/java/App/Program.java,d/a/da8b0cb26ce3555d11f54a2589905d622be0fdb9
+\
+,src/main/java/Resources/ContractPackage.java,9/4/941c233f081db838579aa999836da587e321fe72

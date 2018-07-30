@@ -7,32 +7,29 @@ import java.util.StringTokenizer;
 
 public class InputReader {
 
-    StringTokenizer stok;
+  StringTokenizer stok;
 
-    public InputReader(String filename) throws IOException
-<span class="nc" id="L13">    {</span>
-<span class="nc" id="L14">        String result = &quot;&quot;;</span>
+<span class="nc" id="L12">  public InputReader(String filename) throws IOException {</span>
+<span class="nc" id="L13">    String result = &quot;&quot;;</span>
 
-<span class="nc" id="L16">        File file = new File(filename);</span>
-<span class="nc" id="L17">        Scanner inputFile = new Scanner(file);</span>
+<span class="nc" id="L15">    File file = new File(filename);</span>
+<span class="nc" id="L16">    Scanner inputFile = new Scanner(file);</span>
 
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        while(inputFile.hasNext())</span>
-<span class="nc" id="L20">            result = result + &quot;\n&quot; + inputFile.nextLine();</span>
-
-<span class="nc" id="L22">        stok = new StringTokenizer(result, &quot; \n\r\t&quot;);</span>
-
-<span class="nc" id="L24">        inputFile.close();</span>
-<span class="nc" id="L25">    }</span>
-
-    public String NextToken()
-    {
-<span class="nc" id="L29">        return stok.nextToken();</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">    while(inputFile.hasNext()) {</span>
+<span class="nc" id="L19">      result = result + &quot;\n&quot; + inputFile.nextLine();</span>
     }
 
-    public boolean EndOfFile ()
-    {
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        return !stok.hasMoreTokens();</span>
-    }
+<span class="nc" id="L22">    stok = new StringTokenizer(result, &quot; \n\r\t&quot;);</span>
 
+<span class="nc" id="L24">    inputFile.close();</span>
+<span class="nc" id="L25">  }</span>
+
+  public String nextToken() {
+<span class="nc" id="L28">    return stok.nextToken();</span>
+  }
+
+  public boolean endOfFile () {
+<span class="nc bnc" id="L32" title="All 2 branches missed.">    return !stok.hasMoreTokens();</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

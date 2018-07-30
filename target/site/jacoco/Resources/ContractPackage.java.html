@@ -2,28 +2,24 @@
 
 public class ContractPackage {
 
-    private float rate;
-    private int N;			//n�mero de contratos contados.
+  private float rate;
+  private int quantity;			//n�mero de contratos contados.
 
-    ContractPackage (float rate)
-<span class="fc" id="L9">    {</span>
-<span class="fc" id="L10">        this.rate = rate;</span>
-<span class="fc" id="L11">        N = 1;</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L8">  ContractPackage(float rate) {</span>
+<span class="fc" id="L9">    this.rate = rate;</span>
+<span class="fc" id="L10">    quantity = 1;</span>
+<span class="fc" id="L11">  }</span>
 
-    public float getRate ()
-    {
-<span class="fc" id="L16">        return rate;</span>
-    }
+  public float getRate() {
+<span class="fc" id="L14">    return rate;</span>
+  }
 
-    public void Inc ()
-    {
-<span class="fc" id="L21">        N++;</span>
-<span class="fc" id="L22">    }</span>
+  public void inc() {
+<span class="fc" id="L18">    quantity++;</span>
+<span class="fc" id="L19">  }</span>
 
-    public int getQuantity ()
-    {
-<span class="fc" id="L26">        return N;</span>
-    }
+  public int getQuantity() {
+<span class="fc" id="L22">    return quantity;</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

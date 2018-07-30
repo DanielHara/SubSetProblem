@@ -5,71 +5,72 @@ import Resources.ContractPackage;
 import java.util.ArrayList;
 
 public class ContractList {
-    private ArrayList&lt;ContractPackage&gt; contractList;
-<span class="pc" id="L9">    final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;</span>
-<span class="pc" id="L10">    final String NO_SOLUTION_FOUND = &quot;NO SOLUTION FOUND&quot;;</span>
+  private ArrayList&lt;ContractPackage&gt; contractList;
+  static final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
+  static final String NO_SOLUTION_FOUND = &quot;NO SOLUTION FOUND&quot;;
 
-<span class="nc" id="L12">    public ContractList() {</span>
-<span class="nc" id="L13">        contractList = new ArrayList();</span>
-<span class="nc" id="L14">    }</span>
+<span class="nc" id="L12">  public ContractList() {</span>
+<span class="nc" id="L13">    contractList = new ArrayList();</span>
+<span class="nc" id="L14">  }</span>
 
-    public void addContractUnit(float rate) {
-<span class="fc bfc" id="L17" title="All 2 branches covered.">        for(int i = 0; i &lt; contractList.size(); i++) {</span>
-<span class="fc bfc" id="L18" title="All 2 branches covered.">            if (isEqual(contractList.get(i).getRate(), rate)) {</span>
-<span class="fc" id="L19">                contractList.get(i).Inc();</span>
-<span class="fc" id="L20">                return;</span>
-            }
-        }
-<span class="fc" id="L23">        ContractPackage newContract = new ContractPackage(rate);</span>
-<span class="fc" id="L24">        contractList.add(newContract);</span>
-<span class="fc" id="L25">    }</span>
+  public void addContractUnit(float rate) {
+<span class="fc bfc" id="L17" title="All 2 branches covered.">    for (int i = 0; i &lt; contractList.size(); i++) {</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">      if (isEqual(contractList.get(i).getRate(), rate)) {</span>
+<span class="fc" id="L19">        contractList.get(i).inc();</span>
+<span class="fc" id="L20">        return;</span>
+      }
+    }
+<span class="fc" id="L23">    ContractPackage newContract = new ContractPackage(rate);</span>
+<span class="fc" id="L24">    contractList.add(newContract);</span>
+<span class="fc" id="L25">  }</span>
 
-    private boolean isEqual(float f1, float f2) {
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        return (Math.abs(f1 - f2)  &lt; FLOAT_COMPARISON_THRESHOLD);</span>
+  private boolean isEqual(float f1, float f2) {
+<span class="fc bfc" id="L28" title="All 2 branches covered.">    return (Math.abs(f1 - f2)  &lt; FLOAT_COMPARISON_THRESHOLD);</span>
+  }
+
+<span class="fc" id="L31">  public ContractList(float[] rates) {</span>
+<span class="fc" id="L32">    contractList = new ArrayList();</span>
+
+<span class="fc" id="L34">    this.addContractRates(rates);</span>
+<span class="fc" id="L35">  }</span>
+
+  public void addContractRates(float[] rates) {
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">    if (rates != null) {</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">      for (float rate : rates) {</span>
+<span class="fc" id="L40">        this.addContractUnit(rate);</span>
+      }
+    }
+<span class="fc" id="L43">  }</span>
+
+  public float getAverageRate() {
+<span class="fc" id="L46">    int totalNumberOfContracts = 0;</span>
+<span class="fc" id="L47">    float rateAccumulator = 0;</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">    for (ContractPackage contract: contractList) {</span>
+<span class="fc" id="L49">      totalNumberOfContracts = totalNumberOfContracts + contract.getQuantity();</span>
+<span class="fc" id="L50">      rateAccumulator = rateAccumulator + contract.getRate() * contract.getQuantity();</span>
+<span class="fc" id="L51">    }</span>
+
+<span class="fc" id="L53">    float averageRate = rateAccumulator / totalNumberOfContracts;</span>
+
+<span class="fc" id="L55">    return averageRate;</span>
+  }
+
+  public String getDescription() {
+<span class="fc" id="L59">    String description = &quot;&quot;;</span>
+
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">    if (contractList.size() == 0) {</span>
+<span class="nc" id="L62">      return NO_SOLUTION_FOUND;</span>
     }
 
-<span class="fc" id="L31">    public ContractList(float[] rates) {</span>
-<span class="fc" id="L32">        contractList = new ArrayList();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">    for (ContractPackage contract: contractList) {</span>
+<span class="fc" id="L66">      description =</span>
+<span class="fc" id="L67">          description.concat(contract.getQuantity()</span>
+<span class="fc" id="L68">                             + &quot; contracts with rate &quot; + contract.getRate() + &quot;\r\n&quot;);</span>
+<span class="fc" id="L69">    }</span>
 
-<span class="fc" id="L34">        this.addContractRates(rates);</span>
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L71">    description = description.concat(&quot;Average: &quot; + this.getAverageRate());</span>
 
-    public void addContractRates(float[] rates) {
-<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if(rates != null) {</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">            for (float rate : rates) {</span>
-<span class="fc" id="L40">                this.addContractUnit(rate);</span>
-            }
-        }
-<span class="fc" id="L43">    }</span>
-
-    public float getAverageRate() {
-<span class="fc" id="L46">        int totalNumberOfContracts = 0;</span>
-<span class="fc" id="L47">        float rateAccumulator = 0;</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">        for (ContractPackage contract: contractList) {</span>
-<span class="fc" id="L49">            totalNumberOfContracts = totalNumberOfContracts + contract.getQuantity();</span>
-<span class="fc" id="L50">            rateAccumulator = rateAccumulator + contract.getRate() * contract.getQuantity();</span>
-<span class="fc" id="L51">        }</span>
-
-<span class="fc" id="L53">        float averageRate = rateAccumulator / totalNumberOfContracts;</span>
-
-<span class="fc" id="L55">        return averageRate;</span>
-    }
-
-    public String getDescription() {
-<span class="fc" id="L59">        String description = &quot;&quot;;</span>
-
-<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (contractList.size() == 0) {</span>
-<span class="nc" id="L62">            return NO_SOLUTION_FOUND;</span>
-        }
-
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (ContractPackage contract: contractList) {</span>
-<span class="fc" id="L66">            description =</span>
-<span class="fc" id="L67">                 description.concat(contract.getQuantity() + &quot; contracts with rate &quot; + contract.getRate() + &quot;\r\n&quot;);</span>
-<span class="fc" id="L68">        }</span>
-
-<span class="fc" id="L70">        description = description.concat(&quot;Average: &quot; + this.getAverageRate());</span>
-
-<span class="fc" id="L72">        return description;</span>
-    }
+<span class="fc" id="L73">    return description;</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

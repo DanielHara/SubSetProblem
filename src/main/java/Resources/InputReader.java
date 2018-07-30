@@ -7,31 +7,28 @@ import java.util.StringTokenizer;
 
 public class InputReader {
 
-    StringTokenizer stok;
+  StringTokenizer stok;
 
-    public InputReader(String filename) throws IOException
-    {
-        String result = "";
+  public InputReader(String filename) throws IOException {
+    String result = "";
 
-        File file = new File(filename);
-        Scanner inputFile = new Scanner(file);
+    File file = new File(filename);
+    Scanner inputFile = new Scanner(file);
 
-        while(inputFile.hasNext())
-            result = result + "\n" + inputFile.nextLine();
-
-        stok = new StringTokenizer(result, " \n\r\t");
-
-        inputFile.close();
+    while(inputFile.hasNext()) {
+      result = result + "\n" + inputFile.nextLine();
     }
 
-    public String NextToken()
-    {
-        return stok.nextToken();
-    }
+    stok = new StringTokenizer(result, " \n\r\t");
 
-    public boolean EndOfFile ()
-    {
-        return !stok.hasMoreTokens();
-    }
+    inputFile.close();
+  }
 
+  public String nextToken() {
+    return stok.nextToken();
+  }
+
+  public boolean endOfFile () {
+    return !stok.hasMoreTokens();
+  }
 }

@@ -8,81 +8,67 @@ import Resources.InputReader;
 import Resources.OutputWriter;
 
 <span class="nc" id="L10">public class Program {</span>
+  public static void main(String[] args) {
+<span class="nc" id="L12">    String inputFile = &quot;input.txt&quot;;</span>
+<span class="nc" id="L13">    String outputFile = &quot;output.txt&quot;;</span>
 
-    public static void main (String[] args)
-    {
-<span class="nc" id="L14">        String inputFile = &quot;input.txt&quot;;</span>
-<span class="nc" id="L15">        String outputFile = &quot;output.txt&quot;;</span>
+<span class="nc" id="L15">    InputReader input = null;</span>
 
-<span class="nc" id="L17">        InputReader input = null;</span>
+    try {
+<span class="nc" id="L18">      input = new InputReader(inputFile);</span>
+<span class="nc" id="L19">    } catch (Exception e) {</span>
+<span class="nc" id="L20">      System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L21">      return;</span>
+<span class="nc" id="L22">    }</span>
 
-        try
-        {
-<span class="nc" id="L21">            input = new InputReader(inputFile);</span>
-        }
-<span class="nc" id="L23">        catch (Exception e)</span>
-        {
-<span class="nc" id="L25">            System.out.println(&quot;Error: &quot; + e);</span>
-<span class="nc" id="L26">            return;</span>
-<span class="nc" id="L27">        }</span>
+<span class="nc" id="L24">    AlgorithmMode modo = AlgorithmMode.BEST_AVERAGE;</span>
 
-<span class="nc" id="L29">        AlgorithmMode Modo = AlgorithmMode.BEST_AVERAGE;</span>
+    int numberReadContracts;
+    float rateReadContract;
 
-        int numberPossibleContracts;
-        int numberToChoose;
-        float desiredAverage;
+<span class="nc" id="L29">    String modeAsString = input.nextToken();</span>
 
-        int numberReadContracts;
-        float rateReadContract;
+<span class="nc bnc" id="L31" title="All 2 branches missed.">    if (modeAsString.toUpperCase().contains(&quot;ABOVE_AVERAGE&quot;)) {</span>
+<span class="nc" id="L32">      modo = AlgorithmMode.ABOVE_AVERAGE;</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">    } else if (modeAsString.toUpperCase().contains(&quot;BELOW_AVERAGE&quot;)) {</span>
+<span class="nc" id="L34">      modo = AlgorithmMode.BELOW_AVERAGE;</span>
+    }
 
-<span class="nc" id="L38">        String ModeAsString = input.NextToken();</span>
-
-<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (ModeAsString.toUpperCase().contains(&quot;ABOVE_AVERAGE&quot;))</span>
-<span class="nc" id="L41">            Modo = AlgorithmMode.ABOVE_AVERAGE;</span>
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        else if (ModeAsString.toUpperCase().contains(&quot;BELOW_AVERAGE&quot;))</span>
-<span class="nc" id="L43">            Modo = AlgorithmMode.BELOW_AVERAGE;</span>
-
-<span class="nc" id="L45">        numberPossibleContracts = Integer.parseInt(input.NextToken());</span>
-<span class="nc" id="L46">        numberToChoose = Integer.parseInt(input.NextToken());</span>
-<span class="nc" id="L47">        desiredAverage = Float.parseFloat(input.NextToken());</span>
+<span class="nc" id="L37">    int numberPossibleContracts = Integer.parseInt(input.nextToken());</span>
+<span class="nc" id="L38">    int numberToChoose = Integer.parseInt(input.nextToken());</span>
+<span class="nc" id="L39">    float desiredAverage = Float.parseFloat(input.nextToken());</span>
 
 
-<span class="nc" id="L50">        float[] v = new float[numberPossibleContracts];</span>
+<span class="nc" id="L42">    float[] v = new float[numberPossibleContracts];</span>
 
-        int i, j;
-<span class="nc" id="L53">        i = 0;</span>
-<span class="nc bnc" id="L54" title="All 2 branches missed.">        while(!input.EndOfFile())</span>
-        {
-<span class="nc" id="L56">            numberReadContracts = Integer.parseInt(input.NextToken());</span>
-<span class="nc" id="L57">            rateReadContract = Float.parseFloat(input.NextToken());</span>
+<span class="nc" id="L44">    int i = 0;</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">    while (!input.endOfFile()) {</span>
+<span class="nc" id="L46">      numberReadContracts = Integer.parseInt(input.nextToken());</span>
+<span class="nc" id="L47">      rateReadContract = Float.parseFloat(input.nextToken());</span>
 
-<span class="nc bnc" id="L59" title="All 2 branches missed.">            for (j = 1; j &lt;= numberReadContracts; j++)</span>
-            {
-<span class="nc" id="L61">                v[i] = rateReadContract;</span>
-<span class="nc" id="L62">                i++;</span>
-            }
-        }
+<span class="nc bnc" id="L49" title="All 2 branches missed.">      for (int j = 1; j &lt;= numberReadContracts; j++) {</span>
+<span class="nc" id="L50">        v[i] = rateReadContract;</span>
+<span class="nc" id="L51">        i++;</span>
+      }
+    }
 
-<span class="nc" id="L66">        ProblemSet problemSet = new ProblemSet(Modo, numberToChoose, desiredAverage, v);</span>
+<span class="nc" id="L55">    ProblemSet problemSet = new ProblemSet(modo, numberToChoose, desiredAverage, v);</span>
 
-<span class="nc" id="L68">        SubSet problemSetSolver = new SubSet();</span>
+<span class="nc" id="L57">    SubSet problemSetSolver = new SubSet();</span>
 
-<span class="nc" id="L70">        float[] solutionRates =  problemSetSolver.RunAlgorithm(problemSet);</span>
+<span class="nc" id="L59">    float[] solutionRates =  problemSetSolver.runAlgorithm(problemSet);</span>
 
-<span class="nc" id="L72">        ContractList solutionContractList = new ContractList(solutionRates);</span>
+<span class="nc" id="L61">    ContractList solutionContractList = new ContractList(solutionRates);</span>
 
-<span class="nc" id="L74">        String solutionString = solutionContractList.getDescription();</span>
+<span class="nc" id="L63">    String solutionString = solutionContractList.getDescription();</span>
 
-        try
-        {
-<span class="nc" id="L78">            OutputWriter outputWriter = new OutputWriter(outputFile);</span>
-<span class="nc" id="L79">            outputWriter.writeString(solutionString);</span>
-<span class="nc" id="L80">            outputWriter.close();</span>
-        }
-<span class="nc" id="L82">        catch (Exception e)</span>
-        {
-<span class="nc" id="L84">            System.out.println(&quot;Error: &quot; + e);</span>
-<span class="nc" id="L85">        }</span>
-<span class="nc" id="L86">    }</span>
+    try {
+<span class="nc" id="L66">      OutputWriter outputWriter = new OutputWriter(outputFile);</span>
+<span class="nc" id="L67">      outputWriter.writeString(solutionString);</span>
+<span class="nc" id="L68">      outputWriter.close();</span>
+<span class="nc" id="L69">    } catch (Exception e) {</span>
+<span class="nc" id="L70">      System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L71">    }</span>
+<span class="nc" id="L72">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

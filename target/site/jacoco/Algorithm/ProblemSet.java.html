@@ -3,32 +3,32 @@
 import java.util.Arrays;
 
 public class ProblemSet {
-    private AlgorithmMode mode;
-    private int numberToChoose;
-    private float desiredAverage;
-    private float[] rates;
+  private AlgorithmMode mode;
+  private int numberToChoose;
+  private float desiredAverage;
+  private float[] rates;
 
-<span class="fc" id="L11">    public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {</span>
-<span class="fc" id="L12">        this.mode = mode;</span>
-<span class="fc" id="L13">        this.numberToChoose = numberToChoose;</span>
-<span class="fc" id="L14">        this.desiredAverage = desiredAverage;</span>
-<span class="fc" id="L15">        this.rates = Arrays.copyOf(rates, rates.length);</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L11">  public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {</span>
+<span class="fc" id="L12">    this.mode = mode;</span>
+<span class="fc" id="L13">    this.numberToChoose = numberToChoose;</span>
+<span class="fc" id="L14">    this.desiredAverage = desiredAverage;</span>
+<span class="fc" id="L15">    this.rates = Arrays.copyOf(rates, rates.length);</span>
+<span class="fc" id="L16">  }</span>
 
-    public AlgorithmMode getMode() {
-<span class="fc" id="L19">        return this.mode;</span>
-    }
+  public AlgorithmMode getMode() {
+<span class="fc" id="L19">    return this.mode;</span>
+  }
 
-    public int getNumberToChoose() {
-<span class="fc" id="L23">        return this.numberToChoose;</span>
-    }
+  public int getNumberToChoose() {
+<span class="fc" id="L23">    return this.numberToChoose;</span>
+  }
 
-    public float getDesiredAverage() {
-<span class="fc" id="L27">        return this.desiredAverage;</span>
-    }
+  public float getDesiredAverage() {
+<span class="fc" id="L27">    return this.desiredAverage;</span>
+  }
 
-    public float[] getRates() {
-<span class="fc" id="L31">        return Arrays.copyOf(this.rates, this.rates.length);</span>
-    }
+  public float[] getRates() {
+<span class="fc" id="L31">    return Arrays.copyOf(this.rates, this.rates.length);</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

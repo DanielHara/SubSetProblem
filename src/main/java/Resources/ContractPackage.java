@@ -2,27 +2,23 @@ package Resources;
 
 public class ContractPackage {
 
-    private float rate;
-    private int N;			//n�mero de contratos contados.
+  private float rate;
+  private int quantity;			//n�mero de contratos contados.
 
-    ContractPackage (float rate)
-    {
-        this.rate = rate;
-        N = 1;
-    }
+  ContractPackage(float rate) {
+    this.rate = rate;
+    quantity = 1;
+  }
 
-    public float getRate ()
-    {
-        return rate;
-    }
+  public float getRate() {
+    return rate;
+  }
 
-    public void Inc ()
-    {
-        N++;
-    }
+  public void inc() {
+    quantity++;
+  }
 
-    public int getQuantity ()
-    {
-        return N;
-    }
+  public int getQuantity() {
+    return quantity;
+  }
 }

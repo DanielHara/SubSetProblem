@@ -5,24 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8c8b7e3-6bba-4975-b910-5864ea5816ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8237620164894ec6c918d31734b7173a547f7659" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8237620164894ec6c918d31734b7173a547f7659" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da8b0cb26ce3555d11f54a2589905d622be0fdb9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da8b0cb26ce3555d11f54a2589905d622be0fdb9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f01a872fa5f11c0ad5616fc4d2c7c51f3de1c8bf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f01a872fa5f11c0ad5616fc4d2c7c51f3de1c8bf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3d0cde484f5383ff6f3f0ac3a7facc78ff7d8b1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3d0cde484f5383ff6f3f0ac3a7facc78ff7d8b1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/ContractList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/ContractList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SubSet/SubSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SubSet/SubSetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SubSetSolver-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SubSetSolver-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/checkstyle-result.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Algorithm/SubSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Algorithm/SubSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/App/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/App/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resources/ContractList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resources/ContractList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resources/ContractPackage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resources/ContractPackage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resources/InputReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resources/InputReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resources/OutputWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resources/OutputWriter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/.sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/.sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/AlgorithmMode.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/AlgorithmMode.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/ProblemSet.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/ProblemSet.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/SubSet.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/SubSet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/SubSet.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/SubSet.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/Algorithm/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Algorithm/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/App/Program.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/App/Program.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/App/Program.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/App/Program.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/App/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/App/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/App/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/App/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractList.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractList.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractPackage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractPackage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractPackage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/ContractPackage.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/InputReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/InputReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/InputReader.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/InputReader.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/OutputWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/OutputWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/OutputWriter.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/OutputWriter.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/Resources/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/Resources/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Resources.ContractListTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Resources.ContractListTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/SubSet.SubSetTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/SubSet.SubSetTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-Resources.ContractListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-Resources.ContractListTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-SubSet.SubSetTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-SubSet.SubSetTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/SubSet/SubSetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SubSet/SubSetTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,13 +70,14 @@
     <session id="301255644">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,9 +86,9 @@
           <entry key="exec" value="2" />
           <entry key="html" value="5" />
           <entry key="iml" value="2" />
-          <entry key="java" value="38" />
+          <entry key="java" value="49" />
           <entry key="txt" value="32" />
-          <entry key="xml" value="13" />
+          <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -61,70 +96,37 @@
           <entry key="CLASS" value="3" />
           <entry key="HTML" value="5" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="38" />
+          <entry key="JAVA" value="49" />
           <entry key="PLAIN_TEXT" value="34" />
-          <entry key="XML" value="13" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10146" />
+          <entry key="java" value="10462" />
           <entry key="txt" value="146" />
-          <entry key="xml" value="70" />
+          <entry key="xml" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10146" />
+          <entry key="JAVA" value="10462" />
           <entry key="PLAIN_TEXT" value="146" />
-          <entry key="XML" value="70" />
+          <entry key="XML" value="72" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SubSetSolver.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="224">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,8 +134,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Resources/InputReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="150">
+              <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Resources/ContractListTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,35 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="56" column="61" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -199,6 +193,10 @@
       <find>MELHORMEDIA</find>
       <find>PacoteContratos</find>
       <find>getTaxa</find>
+      <find>RunAlgorithm</find>
+      <find>Inc</find>
+      <find>NextToken</find>
+      <find>distan</find>
     </findStrings>
     <replaceStrings>
       <replace>ABOVE_AVERAGE</replace>
@@ -206,8 +204,12 @@
       <replace>BEST_AVERAGE</replace>
       <replace>ContractPackage</replace>
       <replace>getRate</replace>
+      <replace>runAlgorithm</replace>
+      <replace>inc</replace>
+      <replace>nextToken</replace>
     </replaceStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/src/main</dir>
       <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
@@ -224,18 +226,19 @@
         <option value="$PROJECT_DIR$/src/main/java/ContractList.java" />
         <option value="$PROJECT_DIR$/src/main/java/OutputWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Resources/InputReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/Resources/ContratListTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Resources/ContractList.java" />
         <option value="$PROJECT_DIR$/src/test/java/SubSet/SubSetTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/src/test/java/Resources/ContractListTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Resources/PacoteContratos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Resources/ContractList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Resources/InputReader.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -252,9 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,14 +337,17 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532872658510" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532916446713" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -394,8 +397,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2849162" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2897047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -404,12 +408,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40293637" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40293637" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.50734097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29363784" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="SonarLint" order="10" />
@@ -482,73 +486,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Resources/ContractListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/InputReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SubSetSolver.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,17 +496,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/SubSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="-120">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/ProblemSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/OutputWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/ContractPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algorithm/AlgorithmMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="224">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Resources/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Resources/ContractListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="56" column="61" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
         </state>
       </provider>
     </entry>

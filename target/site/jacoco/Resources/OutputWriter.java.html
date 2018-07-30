@@ -6,21 +6,21 @@ import java.io.IOException;
 
 public class OutputWriter {
 
-<span class="nc" id="L9">    FileWriter fw = null;</span>
-<span class="nc" id="L10">    BufferedWriter bw = null;</span>
+  FileWriter fw;
+  BufferedWriter bw;
 
-<span class="nc" id="L12">    public OutputWriter(String outputFile) throws IOException {</span>
-<span class="nc" id="L13">        fw = new FileWriter(outputFile);</span>
-<span class="nc" id="L14">        bw = new BufferedWriter(fw);</span>
-<span class="nc" id="L15">    }</span>
+<span class="nc" id="L12">  public OutputWriter(String outputFile) throws IOException {</span>
+<span class="nc" id="L13">    fw = new FileWriter(outputFile);</span>
+<span class="nc" id="L14">    bw = new BufferedWriter(fw);</span>
+<span class="nc" id="L15">  }</span>
 
-    public void writeString(String str) throws IOException {
-<span class="nc" id="L18">       bw.write(str);</span>
-<span class="nc" id="L19">    }</span>
+  public void writeString(String str) throws IOException {
+<span class="nc" id="L18">    bw.write(str);</span>
+<span class="nc" id="L19">  }</span>
 
-    public void close() throws IOException {
-<span class="nc" id="L22">        bw.close();</span>
-<span class="nc" id="L23">        fw.close();</span>
-<span class="nc" id="L24">    }</span>
+  public void close() throws IOException {
+<span class="nc" id="L22">    bw.close();</span>
+<span class="nc" id="L23">    fw.close();</span>
+<span class="nc" id="L24">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
