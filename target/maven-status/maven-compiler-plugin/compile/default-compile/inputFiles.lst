@@ -1,8 +1,8 @@
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Algorithm/SubSet.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Resources/ContractPackage.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Algorithm/AlgorithmMode.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Resources/OutputWriter.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Resources/InputReader.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Algorithm/ProblemSet.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/Resources/ContractList.java
-/home/daniel/IdeaProjects/SubSetSolver/src/main/java/App/Program.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/app/Program.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/SubSet.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/AlgorithmMode.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/ProblemSet.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/InputReader.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/ContractPackage.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/OutputWriter.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/ContractList.java

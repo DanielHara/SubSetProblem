@@ -1,9 +1,9 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-SubSetSolver,App,Program,135,0,8,0,38,0,6,0,2,0
-SubSetSolver,Resources,ContractList,10,167,2,14,4,33,3,12,1,6
-SubSetSolver,Resources,InputReader,52,0,4,0,11,0,5,0,3,0
-SubSetSolver,Resources,OutputWriter,28,0,0,0,9,0,3,0,3,0
-SubSetSolver,Resources,ContractPackage,0,22,0,0,0,8,0,4,0,4
-SubSetSolver,Algorithm,AlgorithmMode,9,39,0,0,0,4,2,2,2,2
-SubSetSolver,Algorithm,SubSet,6,391,0,36,3,53,1,26,1,8
-SubSetSolver,Algorithm,ProblemSet,0,34,0,0,0,10,0,5,0,5
+SubSetSolver,app,Program,135,0,8,0,38,0,6,0,2,0
+SubSetSolver,resources,OutputWriter,28,0,0,0,9,0,3,0,3,0
+SubSetSolver,resources,InputReader,52,0,4,0,11,0,5,0,3,0
+SubSetSolver,resources,ContractPackage,0,22,0,0,0,8,0,4,0,4
+SubSetSolver,resources,ContractList,10,167,2,14,4,33,3,12,1,6
+SubSetSolver,algorithm,AlgorithmMode,9,39,0,0,0,4,2,2,2,2
+SubSetSolver,algorithm,SubSet,6,391,0,36,3,53,1,26,1,8
+SubSetSolver,algorithm,ProblemSet,0,34,0,0,0,10,0,5,0,5

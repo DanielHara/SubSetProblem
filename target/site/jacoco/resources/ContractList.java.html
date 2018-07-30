@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ContractList.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SubSetSolver</a> &gt; <a href="index.source.html" class="el_package">resources</a> &gt; <span class="el_source">ContractList.java</span></div><h1>ContractList.java</h1><pre class="source lang-java linenums">package resources;
+
+import java.util.ArrayList;
+
+public class ContractList {
+  private ArrayList&lt;ContractPackage&gt; contractList;
+  static final float FLOAT_COMPARISON_THRESHOLD = (float)0.0001;
+  static final String NO_SOLUTION_FOUND = &quot;NO SOLUTION FOUND&quot;;
+
+<span class="nc" id="L10">  public ContractList() {</span>
+<span class="nc" id="L11">    contractList = new ArrayList();</span>
+<span class="nc" id="L12">  }</span>
+
+  private void addContractUnit(float rate) {
+<span class="fc bfc" id="L15" title="All 2 branches covered.">    for (int i = 0; i &lt; contractList.size(); i++) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">      if (isEqual(contractList.get(i).getRate(), rate)) {</span>
+<span class="fc" id="L17">        contractList.get(i).inc();</span>
+<span class="fc" id="L18">        return;</span>
+      }
+    }
+<span class="fc" id="L21">    ContractPackage newContract = new ContractPackage(rate);</span>
+<span class="fc" id="L22">    contractList.add(newContract);</span>
+<span class="fc" id="L23">  }</span>
+
+  private boolean isEqual(float f1, float f2) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">    return (Math.abs(f1 - f2)  &lt; FLOAT_COMPARISON_THRESHOLD);</span>
+  }
+
+<span class="fc" id="L29">  public ContractList(float[] rates) {</span>
+<span class="fc" id="L30">    contractList = new ArrayList();</span>
+
+<span class="fc" id="L32">    this.addContractRates(rates);</span>
+<span class="fc" id="L33">  }</span>
+
+  public void addContractRates(float[] rates) {
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">    if (rates != null) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">      for (float rate : rates) {</span>
+<span class="fc" id="L38">        this.addContractUnit(rate);</span>
+      }
+    }
+<span class="fc" id="L41">  }</span>
+
+  public float getAverageRate() {
+<span class="fc" id="L44">    int totalNumberOfContracts = 0;</span>
+<span class="fc" id="L45">    float rateAccumulator = 0;</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">    for (ContractPackage contract: contractList) {</span>
+<span class="fc" id="L47">      totalNumberOfContracts = totalNumberOfContracts + contract.getQuantity();</span>
+<span class="fc" id="L48">      rateAccumulator = rateAccumulator + contract.getRate() * contract.getQuantity();</span>
+<span class="fc" id="L49">    }</span>
+
+<span class="fc" id="L51">    float averageRate = rateAccumulator / totalNumberOfContracts;</span>
+
+<span class="fc" id="L53">    return averageRate;</span>
+  }
+
+  public String getDescription() {
+<span class="fc" id="L57">    String description = &quot;&quot;;</span>
+
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">    if (contractList.size() == 0) {</span>
+<span class="nc" id="L60">      return NO_SOLUTION_FOUND;</span>
+    }
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">    for (ContractPackage contract: contractList) {</span>
+<span class="fc" id="L64">      description =</span>
+<span class="fc" id="L65">          description.concat(contract.getQuantity()</span>
+<span class="fc" id="L66">                             + &quot; contracts with rate &quot; + contract.getRate() + &quot;\r\n&quot;);</span>
+<span class="fc" id="L67">    }</span>
+
+<span class="fc" id="L69">    description = description.concat(&quot;Average: &quot; + this.getAverageRate());</span>
+
+<span class="fc" id="L71">    return description;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
