@@ -14,7 +14,12 @@ public class ProblemSetFileReader {
     this.inputReader = inputReader;
   }
 
-  public ProblemSet getProblemSet () throws Exception {
+  /**
+   * Reads input file and returns problem data.
+   * @return problemSet corresponding to the given problem in the input file
+   * @throws IllegalInputFileException when the input is invalid
+   */
+  public ProblemSet getProblemSet() throws IllegalInputFileException {
     int numberReadContracts;
     float rateReadContract;
     AlgorithmMode modo;

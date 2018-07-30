@@ -70,7 +70,7 @@ public class SubSetTest {
     Assert.assertArrayEquals(new float[]{9, 10}, solution, 0.1f);
   }
 
-  public float averageArray(float[] v) {
+  private float averageArray(float[] v) {
     if (v.length == 0) {
       return -1;
     }

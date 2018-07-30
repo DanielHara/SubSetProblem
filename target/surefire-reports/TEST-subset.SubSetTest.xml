@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="subset.SubSetTest" time="8.953" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="subset.SubSetTest" time="7.868" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -64,8 +64,8 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="subset.SubSetTest" name="testAlgorithmBestAverage" time="0.077"/>
-  <testcase classname="subset.SubSetTest" name="testBestAverageRealCase" time="8.876"/>
-  <testcase classname="subset.SubSetTest" name="testAlgorithmAverageAbove" time="0"/>
+  <testcase classname="subset.SubSetTest" name="testAlgorithmBestAverage" time="0.051"/>
+  <testcase classname="subset.SubSetTest" name="testBestAverageRealCase" time="7.816"/>
+  <testcase classname="subset.SubSetTest" name="testAlgorithmAverageAbove" time="0.001"/>
   <testcase classname="subset.SubSetTest" name="testAlgorithmAverageBelow" time="0"/>
 </testsuite>

@@ -8,6 +8,13 @@ public class ProblemSet {
   private float desiredAverage;
   private float[] rates;
 
+  /**
+   * Returns object with problem data.
+   * @param mode the obtained average must be >=, <= the desiredAverage, or indifferent.
+   * @param numberToChoose how many contracts to choose from
+   * @param desiredAverage average to be obtained as near as possible
+   * @param rates contracts available
+   */
   public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {
     this.mode = mode;
     this.numberToChoose = numberToChoose;

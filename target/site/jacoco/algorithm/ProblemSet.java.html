@@ -8,27 +8,34 @@ public class ProblemSet {
   private float desiredAverage;
   private float[] rates;
 
-<span class="fc" id="L11">  public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {</span>
-<span class="fc" id="L12">    this.mode = mode;</span>
-<span class="fc" id="L13">    this.numberToChoose = numberToChoose;</span>
-<span class="fc" id="L14">    this.desiredAverage = desiredAverage;</span>
-<span class="fc" id="L15">    this.rates = Arrays.copyOf(rates, rates.length);</span>
-<span class="fc" id="L16">  }</span>
+  /**
+   * Returns object with problem data.
+   * @param mode the obtained average must be &gt;=, &lt;= the desiredAverage, or indifferent.
+   * @param numberToChoose how many contracts to choose from
+   * @param desiredAverage average to be obtained as near as possible
+   * @param rates contracts available
+   */
+<span class="fc" id="L18">  public ProblemSet(AlgorithmMode mode, int numberToChoose, float desiredAverage, float[] rates) {</span>
+<span class="fc" id="L19">    this.mode = mode;</span>
+<span class="fc" id="L20">    this.numberToChoose = numberToChoose;</span>
+<span class="fc" id="L21">    this.desiredAverage = desiredAverage;</span>
+<span class="fc" id="L22">    this.rates = Arrays.copyOf(rates, rates.length);</span>
+<span class="fc" id="L23">  }</span>
 
   public AlgorithmMode getMode() {
-<span class="fc" id="L19">    return this.mode;</span>
+<span class="fc" id="L26">    return this.mode;</span>
   }
 
   public int getNumberToChoose() {
-<span class="fc" id="L23">    return this.numberToChoose;</span>
+<span class="fc" id="L30">    return this.numberToChoose;</span>
   }
 
   public float getDesiredAverage() {
-<span class="fc" id="L27">    return this.desiredAverage;</span>
+<span class="fc" id="L34">    return this.desiredAverage;</span>
   }
 
   public float[] getRates() {
-<span class="fc" id="L31">    return Arrays.copyOf(this.rates, this.rates.length);</span>
+<span class="fc" id="L38">    return Arrays.copyOf(this.rates, this.rates.length);</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -14,45 +14,50 @@ public class ProblemSetFileReader {
 <span class="nc" id="L14">    this.inputReader = inputReader;</span>
 <span class="nc" id="L15">  }</span>
 
-  public ProblemSet getProblemSet () throws Exception {
+  /**
+   * Reads input file and returns problem data.
+   * @return problemSet corresponding to the given problem in the input file
+   * @throws IllegalInputFileException when the input is invalid
+   */
+  public ProblemSet getProblemSet() throws IllegalInputFileException {
     int numberReadContracts;
     float rateReadContract;
     AlgorithmMode modo;
 
-<span class="nc" id="L22">    String modeAsString = inputReader.nextToken();</span>
+<span class="nc" id="L27">    String modeAsString = inputReader.nextToken();</span>
 
-<span class="nc bnc" id="L24" title="All 14 branches missed.">    switch (modeAsString.toUpperCase()) {</span>
+<span class="nc bnc" id="L29" title="All 14 branches missed.">    switch (modeAsString.toUpperCase()) {</span>
       case &quot;ABOVE_AVERAGE&quot;:
-<span class="nc" id="L26">        modo = AlgorithmMode.ABOVE_AVERAGE;</span>
-<span class="nc" id="L27">        break;</span>
+<span class="nc" id="L31">        modo = AlgorithmMode.ABOVE_AVERAGE;</span>
+<span class="nc" id="L32">        break;</span>
       case &quot;BELOW_AVERAGE&quot;:
-<span class="nc" id="L29">        modo = AlgorithmMode.BELOW_AVERAGE;</span>
-<span class="nc" id="L30">        break;</span>
+<span class="nc" id="L34">        modo = AlgorithmMode.BELOW_AVERAGE;</span>
+<span class="nc" id="L35">        break;</span>
       case &quot;BEST_AVERAGE&quot;:
-<span class="nc" id="L32">        modo = AlgorithmMode.BEST_AVERAGE;</span>
-<span class="nc" id="L33">        break;</span>
+<span class="nc" id="L37">        modo = AlgorithmMode.BEST_AVERAGE;</span>
+<span class="nc" id="L38">        break;</span>
       default:
-<span class="nc" id="L35">        throw new IllegalInputFileException(ILLEGAL_MODE);</span>
+<span class="nc" id="L40">        throw new IllegalInputFileException(ILLEGAL_MODE);</span>
     }
 
-<span class="nc" id="L38">    int numberPossibleContracts = Integer.parseInt(inputReader.nextToken());</span>
-<span class="nc" id="L39">    int numberToChoose = Integer.parseInt(inputReader.nextToken());</span>
-<span class="nc" id="L40">    float desiredAverage = Float.parseFloat(inputReader.nextToken());</span>
+<span class="nc" id="L43">    int numberPossibleContracts = Integer.parseInt(inputReader.nextToken());</span>
+<span class="nc" id="L44">    int numberToChoose = Integer.parseInt(inputReader.nextToken());</span>
+<span class="nc" id="L45">    float desiredAverage = Float.parseFloat(inputReader.nextToken());</span>
 
-<span class="nc" id="L42">    float[] v = new float[numberPossibleContracts];</span>
+<span class="nc" id="L47">    float[] v = new float[numberPossibleContracts];</span>
 
-<span class="nc" id="L44">    int i = 0;</span>
-<span class="nc bnc" id="L45" title="All 2 branches missed.">    while (!inputReader.endOfFile()) {</span>
-<span class="nc" id="L46">      numberReadContracts = Integer.parseInt(inputReader.nextToken());</span>
-<span class="nc" id="L47">      rateReadContract = Float.parseFloat(inputReader.nextToken());</span>
+<span class="nc" id="L49">    int i = 0;</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">    while (!inputReader.endOfFile()) {</span>
+<span class="nc" id="L51">      numberReadContracts = Integer.parseInt(inputReader.nextToken());</span>
+<span class="nc" id="L52">      rateReadContract = Float.parseFloat(inputReader.nextToken());</span>
 
-<span class="nc bnc" id="L49" title="All 2 branches missed.">      for (int j = 1; j &lt;= numberReadContracts; j++) {</span>
-<span class="nc" id="L50">        v[i] = rateReadContract;</span>
-<span class="nc" id="L51">        i++;</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">      for (int j = 1; j &lt;= numberReadContracts; j++) {</span>
+<span class="nc" id="L55">        v[i] = rateReadContract;</span>
+<span class="nc" id="L56">        i++;</span>
       }
     }
 
-<span class="nc" id="L55">    return new ProblemSet(modo, numberToChoose, desiredAverage, v);</span>
+<span class="nc" id="L60">    return new ProblemSet(modo, numberToChoose, desiredAverage, v);</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

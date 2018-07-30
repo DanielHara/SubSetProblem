@@ -9,6 +9,12 @@ public class InputReader {
 
   StringTokenizer stok;
 
+  /**
+   * Reads a file in the constructor and creates a nextToken() method,
+   * that returns the next token of the file.
+   * @param filename name of the file to be read
+   * @throws IOException when IO error occurs
+   */
   public InputReader(String filename) throws IOException {
     String result = "";
 
