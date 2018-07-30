@@ -3,6 +3,7 @@ resources/InputReader.class
 resources/ContractPackage.class
 algorithm/ProblemSet.class
 resources/OutputWriter.class
+resources/ProblemSetFileReader.class
 algorithm/SubSet.class
 algorithm/AlgorithmMode.class
 app/Program.class

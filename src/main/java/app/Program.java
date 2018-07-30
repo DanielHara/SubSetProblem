@@ -1,58 +1,29 @@
 package app;
 
-import algorithm.AlgorithmMode;
 import algorithm.ProblemSet;
 import algorithm.SubSet;
 import resources.ContractList;
 import resources.InputReader;
 import resources.OutputWriter;
+import resources.ProblemSetFileReader;
 
 public class Program {
   public static void main(String[] args) {
     String inputFile = "input.txt";
     String outputFile = "output.txt";
 
-    InputReader input = null;
+    InputReader inputReader;
+    ProblemSetFileReader problemSetFileReader;
 
     try {
-      input = new InputReader(inputFile);
+      inputReader = new InputReader(inputFile);
+      problemSetFileReader = new ProblemSetFileReader(inputReader);
     } catch (Exception e) {
       System.out.println("Error: " + e);
       return;
     }
 
-    AlgorithmMode modo = AlgorithmMode.BEST_AVERAGE;
-
-    int numberReadContracts;
-    float rateReadContract;
-
-    String modeAsString = input.nextToken();
-
-    if (modeAsString.toUpperCase().contains("ABOVE_AVERAGE")) {
-      modo = AlgorithmMode.ABOVE_AVERAGE;
-    } else if (modeAsString.toUpperCase().contains("BELOW_AVERAGE")) {
-      modo = AlgorithmMode.BELOW_AVERAGE;
-    }
-
-    int numberPossibleContracts = Integer.parseInt(input.nextToken());
-    int numberToChoose = Integer.parseInt(input.nextToken());
-    float desiredAverage = Float.parseFloat(input.nextToken());
-
-
-    float[] v = new float[numberPossibleContracts];
-
-    int i = 0;
-    while (!input.endOfFile()) {
-      numberReadContracts = Integer.parseInt(input.nextToken());
-      rateReadContract = Float.parseFloat(input.nextToken());
-
-      for (int j = 1; j <= numberReadContracts; j++) {
-        v[i] = rateReadContract;
-        i++;
-      }
-    }
-
-    ProblemSet problemSet = new ProblemSet(modo, numberToChoose, desiredAverage, v);
+    ProblemSet problemSet = problemSetFileReader.getProblemSet();
 
     SubSet problemSetSolver = new SubSet();
 
