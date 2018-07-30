@@ -45,14 +45,24 @@ public class SubSet {
     }
   }
 
+  /**
+   * Runs the SubSet algorithm.
+   * We copy the vector of the rates in vector v.
+   * m[i][numberPartitions] is a vector that holds the positions in vector v which
+   * form the best choice of contracts for the desired average.
+   * To work with non integers numbers, we divide the number desiredAverage * p by
+   * the number numberPartitions, being from now on able to use integers (with a small error)
+   * @param problemSet object
+   * @return vector with the chosen rates.
+   */
   public float[] runAlgorithm(ProblemSet problemSet) {
     AlgorithmMode modo = problemSet.getMode();
-    float media = problemSet.getDesiredAverage();
+    float desiredAverage = problemSet.getDesiredAverage();
     int p = problemSet.getNumberToChoose();
     float[] v = problemSet.getRates();
     int n = v.length;
 
-    float b = media * p / numberPartitions;
+    float b = desiredAverage * p / numberPartitions;
 
     if (modo == AlgorithmMode.ABOVE_AVERAGE) {
       Primitive.sort(v, (d1, d2) -> Double.compare(d2, d1));

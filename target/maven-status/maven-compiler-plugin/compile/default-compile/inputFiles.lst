@@ -5,5 +5,6 @@
 /home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/ProblemSet.java
 /home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/InputReader.java
 /home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/ContractPackage.java
+/home/daniel/IdeaProjects/SubSetSolver/src/main/java/exceptions/IllegalInputFileException.java
 /home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/OutputWriter.java
 /home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/ContractList.java

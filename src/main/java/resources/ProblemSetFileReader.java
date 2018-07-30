@@ -2,8 +2,11 @@ package resources;
 
 import algorithm.AlgorithmMode;
 import algorithm.ProblemSet;
+import exceptions.IllegalInputFileException;
 
 public class ProblemSetFileReader {
+  static final String ILLEGAL_MODE = "Illegal mode has been passed";
+
 
   InputReader inputReader;
 
@@ -11,7 +14,7 @@ public class ProblemSetFileReader {
     this.inputReader = inputReader;
   }
 
-  public ProblemSet getProblemSet() {
+  public ProblemSet getProblemSet () throws Exception {
     int numberReadContracts;
     float rateReadContract;
     AlgorithmMode modo;
@@ -29,7 +32,7 @@ public class ProblemSetFileReader {
         modo = AlgorithmMode.BEST_AVERAGE;
         break;
       default:
-        modo = AlgorithmMode.BEST_AVERAGE;
+        throw new IllegalInputFileException(ILLEGAL_MODE);
     }
 
     int numberPossibleContracts = Integer.parseInt(inputReader.nextToken());

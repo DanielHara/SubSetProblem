@@ -45,26 +45,36 @@ public class SubSet {
     }
   }
 
+  /**
+   * Runs the SubSet algorithm.
+   * We copy the vector of the rates in vector v.
+   * m[i][numberPartitions] is a vector that holds the positions in vector v which
+   * form the best choice of contracts for the desired average.
+   * To work with non integers numbers, we divide the number desiredAverage * p by
+   * the number numberPartitions, being from now on able to use integers (with a small error)
+   * @param problemSet object
+   * @return vector with the chosen rates.
+   */
   public float[] runAlgorithm(ProblemSet problemSet) {
-<span class="fc" id="L49">    AlgorithmMode modo = problemSet.getMode();</span>
-<span class="fc" id="L50">    float media = problemSet.getDesiredAverage();</span>
-<span class="fc" id="L51">    int p = problemSet.getNumberToChoose();</span>
-<span class="fc" id="L52">    float[] v = problemSet.getRates();</span>
-<span class="fc" id="L53">    int n = v.length;</span>
+<span class="fc" id="L59">    AlgorithmMode modo = problemSet.getMode();</span>
+<span class="fc" id="L60">    float desiredAverage = problemSet.getDesiredAverage();</span>
+<span class="fc" id="L61">    int p = problemSet.getNumberToChoose();</span>
+<span class="fc" id="L62">    float[] v = problemSet.getRates();</span>
+<span class="fc" id="L63">    int n = v.length;</span>
 
-<span class="fc" id="L55">    float b = media * p / numberPartitions;</span>
+<span class="fc" id="L65">    float b = desiredAverage * p / numberPartitions;</span>
 
-<span class="fc bfc" id="L57" title="All 2 branches covered.">    if (modo == AlgorithmMode.ABOVE_AVERAGE) {</span>
-<span class="fc" id="L58">      Primitive.sort(v, (d1, d2) -&gt; Double.compare(d2, d1));</span>
-<span class="fc bfc" id="L59" title="All 2 branches covered.">    } else if (modo == AlgorithmMode.BELOW_AVERAGE) {</span>
-<span class="fc" id="L60">      Arrays.sort(v);</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">    if (modo == AlgorithmMode.ABOVE_AVERAGE) {</span>
+<span class="fc" id="L68">      Primitive.sort(v, (d1, d2) -&gt; Double.compare(d2, d1));</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">    } else if (modo == AlgorithmMode.BELOW_AVERAGE) {</span>
+<span class="fc" id="L70">      Arrays.sort(v);</span>
     }
 
-<span class="fc" id="L63">    int [][][] m = new int [n][numberPartitions + 1][p];</span>
+<span class="fc" id="L73">    int [][][] m = new int [n][numberPartitions + 1][p];</span>
 
-<span class="fc bfc" id="L65" title="All 2 branches covered.">    for (int t = 0; t &lt;= numberPartitions; t++) {</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">      for (int i = 0; i &lt; p; i++) {</span>
-<span class="fc" id="L67">        m[p - 1][t][i] = i;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">    for (int t = 0; t &lt;= numberPartitions; t++) {</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">      for (int i = 0; i &lt; p; i++) {</span>
+<span class="fc" id="L77">        m[p - 1][t][i] = i;</span>
       }
     }
 
@@ -72,46 +82,46 @@ public class SubSet {
     int[] u;
     int[] r;
 
-<span class="fc bfc" id="L75" title="All 2 branches covered.">    for (int i = p; i &lt; n; i++) {</span>
-<span class="fc bfc" id="L76" title="All 2 branches covered.">      for (int t = 0; t &lt;= numberPartitions; t++) {</span>
-<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (v[i] &gt; t * b) {</span>
-<span class="fc" id="L78">          m[i][t] = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">    for (int i = p; i &lt; n; i++) {</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">      for (int t = 0; t &lt;= numberPartitions; t++) {</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (v[i] &gt; t * b) {</span>
+<span class="fc" id="L88">          m[i][t] = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
         } else {
-<span class="fc" id="L80">          dist = distance(m[i - 1][t], t, modo, b, v);</span>
-<span class="fc" id="L81">          m[i][t] = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
+<span class="fc" id="L90">          dist = distance(m[i - 1][t], t, modo, b, v);</span>
+<span class="fc" id="L91">          m[i][t] = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
 
-<span class="fc bfc" id="L83" title="All 2 branches covered.">          for (int k = 0; k &lt; p; k++) {</span>
-<span class="fc" id="L84">            u = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
-<span class="fc" id="L85">            u = replace(u[k], i, u);</span>
-<span class="fc bfc" id="L86" title="All 4 branches covered.">            if (dist == INFINITY || (dist &gt; distance(u, t, modo, b, v)</span>
-<span class="fc bfc" id="L87" title="All 2 branches covered.">                &amp;&amp; distance(u, t, modo, b, v) &gt;= 0)) {</span>
-<span class="fc" id="L88">              r = Arrays.copyOf(u, u.length);</span>
-<span class="fc" id="L89">              m[i][t] = Arrays.copyOf(u, u.length);</span>
-<span class="fc" id="L90">              dist = distance(r, t, modo, b, v);</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">          for (int k = 0; k &lt; p; k++) {</span>
+<span class="fc" id="L94">            u = Arrays.copyOf(m[i - 1][t], m[i - 1][t].length);</span>
+<span class="fc" id="L95">            u = replace(u[k], i, u);</span>
+<span class="fc bfc" id="L96" title="All 4 branches covered.">            if (dist == INFINITY || (dist &gt; distance(u, t, modo, b, v)</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">                &amp;&amp; distance(u, t, modo, b, v) &gt;= 0)) {</span>
+<span class="fc" id="L98">              r = Arrays.copyOf(u, u.length);</span>
+<span class="fc" id="L99">              m[i][t] = Arrays.copyOf(u, u.length);</span>
+<span class="fc" id="L100">              dist = distance(r, t, modo, b, v);</span>
             }
           }
         }
       }
     }
 
-<span class="fc" id="L97">    return mapPositionsToValues(m[n - 1][numberPartitions], v);</span>
+<span class="fc" id="L107">    return mapPositionsToValues(m[n - 1][numberPartitions], v);</span>
   }
 
 
   private float[] mapPositionsToValues(int[] u, float[] v) {
-<span class="fc" id="L102">    float[] mappedValues = new float[u.length];</span>
+<span class="fc" id="L112">    float[] mappedValues = new float[u.length];</span>
 
-<span class="fc bfc" id="L104" title="All 2 branches covered.">    for (int i = 0; i &lt; u.length; i++) {</span>
-<span class="fc" id="L105">      mappedValues[i] = v[u[i]];</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">    for (int i = 0; i &lt; u.length; i++) {</span>
+<span class="fc" id="L115">      mappedValues[i] = v[u[i]];</span>
     }
-<span class="fc" id="L107">    return mappedValues;</span>
+<span class="fc" id="L117">    return mappedValues;</span>
   }
 
   private int[] replace(int r, int s, int[] v) {
-<span class="fc" id="L111">    int[] u = IntStream.range(0, v.length)</span>
-<span class="fc bfc" id="L112" title="All 2 branches covered.">                       .map(i -&gt; (v[i] != r) ? v[i] : s)</span>
-<span class="fc" id="L113">                       .toArray();</span>
-<span class="fc" id="L114">    return u;</span>
+<span class="fc" id="L121">    int[] u = IntStream.range(0, v.length)</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">                       .map(i -&gt; (v[i] != r) ? v[i] : s)</span>
+<span class="fc" id="L123">                       .toArray();</span>
+<span class="fc" id="L124">    return u;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

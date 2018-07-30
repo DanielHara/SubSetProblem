@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.5">
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/app/Program.java">
-<error line="11" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 </file>
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/SubSet.java">
-<error line="48" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 </file>
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/algorithm/AlgorithmMode.java">
 </file>
@@ -22,10 +20,13 @@
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/OutputWriter.java">
 </file>
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/ProblemSetFileReader.java">
-<error line="14" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="17" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="17" column="35" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
 </file>
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/resources/InputReader.java">
 <error line="12" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="/home/daniel/IdeaProjects/SubSetSolver/src/main/java/exceptions/IllegalInputFileException.java">
 </file>
 <file name="/home/daniel/IdeaProjects/SubSetSolver/src/test/java/resources/ContractListTest.java">
 </file>

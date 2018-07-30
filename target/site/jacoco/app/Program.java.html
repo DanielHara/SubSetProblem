@@ -8,38 +8,42 @@ import resources.OutputWriter;
 import resources.ProblemSetFileReader;
 
 <span class="nc" id="L10">public class Program {</span>
+  /**
+   * Main program: reads input.txt and write the
+   * chosen contracts on output.txt.
+   */
   public static void main(String[] args) {
-<span class="nc" id="L12">    String inputFile = &quot;input.txt&quot;;</span>
-<span class="nc" id="L13">    String outputFile = &quot;output.txt&quot;;</span>
+<span class="nc" id="L16">    String inputFile = &quot;input.txt&quot;;</span>
+<span class="nc" id="L17">    String outputFile = &quot;output.txt&quot;;</span>
 
     InputReader inputReader;
     ProblemSetFileReader problemSetFileReader;
+    ProblemSet problemSet;
 
     try {
-<span class="nc" id="L19">      inputReader = new InputReader(inputFile);</span>
-<span class="nc" id="L20">      problemSetFileReader = new ProblemSetFileReader(inputReader);</span>
-<span class="nc" id="L21">    } catch (Exception e) {</span>
-<span class="nc" id="L22">      System.out.println(&quot;Error: &quot; + e);</span>
-<span class="nc" id="L23">      return;</span>
-<span class="nc" id="L24">    }</span>
+<span class="nc" id="L24">      inputReader = new InputReader(inputFile);</span>
+<span class="nc" id="L25">      problemSetFileReader = new ProblemSetFileReader(inputReader);</span>
+<span class="nc" id="L26">      problemSet = problemSetFileReader.getProblemSet();</span>
+<span class="nc" id="L27">    } catch (Exception e) {</span>
+<span class="nc" id="L28">      System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L29">      return;</span>
+<span class="nc" id="L30">    }</span>
 
-<span class="nc" id="L26">    ProblemSet problemSet = problemSetFileReader.getProblemSet();</span>
+<span class="nc" id="L32">    SubSet problemSetSolver = new SubSet();</span>
 
-<span class="nc" id="L28">    SubSet problemSetSolver = new SubSet();</span>
+<span class="nc" id="L34">    float[] solutionRates =  problemSetSolver.runAlgorithm(problemSet);</span>
 
-<span class="nc" id="L30">    float[] solutionRates =  problemSetSolver.runAlgorithm(problemSet);</span>
+<span class="nc" id="L36">    ContractList solutionContractList = new ContractList(solutionRates);</span>
 
-<span class="nc" id="L32">    ContractList solutionContractList = new ContractList(solutionRates);</span>
-
-<span class="nc" id="L34">    String solutionString = solutionContractList.getDescription();</span>
+<span class="nc" id="L38">    String solutionString = solutionContractList.getDescription();</span>
 
     try {
-<span class="nc" id="L37">      OutputWriter outputWriter = new OutputWriter(outputFile);</span>
-<span class="nc" id="L38">      outputWriter.writeString(solutionString);</span>
-<span class="nc" id="L39">      outputWriter.close();</span>
-<span class="nc" id="L40">    } catch (Exception e) {</span>
-<span class="nc" id="L41">      System.out.println(&quot;Error: &quot; + e);</span>
-<span class="nc" id="L42">    }</span>
-<span class="nc" id="L43">  }</span>
+<span class="nc" id="L41">      OutputWriter outputWriter = new OutputWriter(outputFile);</span>
+<span class="nc" id="L42">      outputWriter.writeString(solutionString);</span>
+<span class="nc" id="L43">      outputWriter.close();</span>
+<span class="nc" id="L44">    } catch (Exception e) {</span>
+<span class="nc" id="L45">      System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L46">    }</span>
+<span class="nc" id="L47">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
