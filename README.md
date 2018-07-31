@@ -6,8 +6,8 @@ Given `n` fixed interest rate assets (a bond contract or similar), each with an 
 as near as possible of a desired average. This is useful for building combined assets of bonds. There is also interest to restrict the obtained average to be greater or equal, or lower or equal than the desired average,
 or indifferent to this (ie, as near as possible to the desired average).
 
-This is a specific version of the SubSet problem for positive numbers, which admits a solution (implemented here) in time O(n*T(1+p)), where `T` is the number of intervals the interval `[0, desiredAverage * p]` is divided to be able to convert the problem to the SubSet problem with integers.
-This differs from the trivial solution, which consumes time O(n!/(p!(n-p!))) (whichi would be far too expensive).
+This is a specific version of the SubSet problem for positive numbers, which admits a solution (implemented here) in time `O(n*T(1+p))`, where `T` is the number of intervals the interval `[0, desiredAverage * p]` is divided to be able to convert the problem to the SubSet problem with integers.
+This differs from the trivial solution, which consumes time `O(n!/(p!(n-p)!))` (whichi would be far too expensive).
 
 To build the project, enter `mvn clean install`.
 To test the project, enter `mvn test`.
