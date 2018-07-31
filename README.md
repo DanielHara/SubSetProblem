@@ -1,6 +1,4 @@
 # SubSetProblem
-SubSetProblem
-
 This project solves the SubSet problem for positive numbers as a practical application for financial markets.
 The idea for this program came from my internships in the financial industry.
 
