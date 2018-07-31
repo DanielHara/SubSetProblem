@@ -20,6 +20,7 @@ The input and output of the program are by .txt. files.
 First, we write the desired mode of operation: `BEST_AVERAGE` (goes as near as possible of the desired average),
                                                `ABOVE_AVERAGE` (goes as near as possible of the desired average, but must be greater or equal the desired average).
                                                `BELOW_AVERAGE` (goes as near as possible of the desired average, but must be less or equal the desired average).
+
 input.txt:
 ```
 <MODE_OPERATION>
